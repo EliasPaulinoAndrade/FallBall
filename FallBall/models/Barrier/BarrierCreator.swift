@@ -9,8 +9,6 @@
 import Foundation
 import SpriteKit
 
-
-
 class BarrierCreator {
     
     static private let DEFAULT_HORIZONTAL_DISTANCE: CGFloat = 10
@@ -21,10 +19,6 @@ class BarrierCreator {
     
     private var barriers: [SKShapeNode] = []
     var delegate: BarrierCreatorDelegate?
-    
-    func randomBarrier() -> Barrier {
-        return Barrier.init(velocity: 3)
-    }
     
     func dequeueBarrier(withRect barrierRect: CGRect) -> SKShapeNode? {
         var newBarrierNode: SKShapeNode?
@@ -55,12 +49,9 @@ class BarrierCreator {
         
         if let barrier = barrier {
             newBarrierNode = barrier
-            
             newBarrierNode.removeFromParent()
             newBarrierNode.removeAllActions()
-            
             newBarrierNode.position = CGPoint.zero
-            
         } else {
             let barrierBody = SKPhysicsBody.init(edgeLoopFrom: barrierRect)
             newBarrierNode = SKShapeNode.init(rect: barrierRect)

@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E36436F1220DDF7D004F46C0 /* BarrierProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36436F0220DDF7D004F46C0 /* BarrierProtocol.swift */; };
+		E36436F3220DE069004F46C0 /* RectBarrier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36436F2220DE069004F46C0 /* RectBarrier.swift */; };
+		E36436F6220DEEB3004F46C0 /* SKScene+unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36436F5220DEEB3004F46C0 /* SKScene+unit.swift */; };
+		E36436F9220DEF9D004F46C0 /* BehaviourProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36436F8220DEF9D004F46C0 /* BehaviourProtocol.swift */; };
+		E36436FB220DF035004F46C0 /* FallBehaviour.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36436FA220DF035004F46C0 /* FallBehaviour.swift */; };
+		E36436FD220DF12D004F46C0 /* SKNode+behaviour.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36436FC220DF12D004F46C0 /* SKNode+behaviour.swift */; };
+		E36436FF220DF1D3004F46C0 /* BackAndForth.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36436FE220DF1D3004F46C0 /* BackAndForth.swift */; };
 		E36BEFE8220C8B44008C3B4C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36BEFE7220C8B44008C3B4C /* AppDelegate.swift */; };
 		E36BEFEA220C8B44008C3B4C /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = E36BEFE9220C8B44008C3B4C /* GameScene.sks */; };
 		E36BEFEC220C8B44008C3B4C /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = E36BEFEB220C8B44008C3B4C /* Actions.sks */; };
@@ -17,7 +24,6 @@
 		E36BEFF8220C8B45008C3B4C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E36BEFF6220C8B45008C3B4C /* LaunchScreen.storyboard */; };
 		E36BF003220C8B45008C3B4C /* FallBallTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36BF002220C8B45008C3B4C /* FallBallTests.swift */; };
 		E36BF00E220C8B45008C3B4C /* FallBallUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36BF00D220C8B45008C3B4C /* FallBallUITests.swift */; };
-		E36BF01D220C90DB008C3B4C /* Barrier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36BF01C220C90DB008C3B4C /* Barrier.swift */; };
 		E36BF020220C9152008C3B4C /* BarrierCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36BF01F220C9152008C3B4C /* BarrierCreator.swift */; };
 		E36BF027220CB8D5008C3B4C /* BarrierCreatorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36BF026220CB8D5008C3B4C /* BarrierCreatorDelegate.swift */; };
 		E36BF02A220CEF1A008C3B4C /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36BF029220CEF1A008C3B4C /* GameState.swift */; };
@@ -42,6 +48,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E36436F0220DDF7D004F46C0 /* BarrierProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarrierProtocol.swift; sourceTree = "<group>"; };
+		E36436F2220DE069004F46C0 /* RectBarrier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectBarrier.swift; sourceTree = "<group>"; };
+		E36436F5220DEEB3004F46C0 /* SKScene+unit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKScene+unit.swift"; sourceTree = "<group>"; };
+		E36436F8220DEF9D004F46C0 /* BehaviourProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BehaviourProtocol.swift; sourceTree = "<group>"; };
+		E36436FA220DF035004F46C0 /* FallBehaviour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FallBehaviour.swift; sourceTree = "<group>"; };
+		E36436FC220DF12D004F46C0 /* SKNode+behaviour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKNode+behaviour.swift"; sourceTree = "<group>"; };
+		E36436FE220DF1D3004F46C0 /* BackAndForth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackAndForth.swift; sourceTree = "<group>"; };
 		E36BEFE4220C8B44008C3B4C /* FallBall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FallBall.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E36BEFE7220C8B44008C3B4C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E36BEFE9220C8B44008C3B4C /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -58,7 +71,6 @@
 		E36BF009220C8B45008C3B4C /* FallBallUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FallBallUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E36BF00D220C8B45008C3B4C /* FallBallUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FallBallUITests.swift; sourceTree = "<group>"; };
 		E36BF00F220C8B45008C3B4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E36BF01C220C90DB008C3B4C /* Barrier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Barrier.swift; sourceTree = "<group>"; };
 		E36BF01F220C9152008C3B4C /* BarrierCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarrierCreator.swift; sourceTree = "<group>"; };
 		E36BF026220CB8D5008C3B4C /* BarrierCreatorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarrierCreatorDelegate.swift; sourceTree = "<group>"; };
 		E36BF029220CEF1A008C3B4C /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
@@ -90,6 +102,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E36436EF220DDEC4004F46C0 /* Barrier */ = {
+			isa = PBXGroup;
+			children = (
+				E36BF026220CB8D5008C3B4C /* BarrierCreatorDelegate.swift */,
+				E36BF01F220C9152008C3B4C /* BarrierCreator.swift */,
+				E36436F0220DDF7D004F46C0 /* BarrierProtocol.swift */,
+				E36436F2220DE069004F46C0 /* RectBarrier.swift */,
+			);
+			path = Barrier;
+			sourceTree = "<group>";
+		};
+		E36436F4220DEE97004F46C0 /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E36436F5220DEEB3004F46C0 /* SKScene+unit.swift */,
+				E36436FC220DF12D004F46C0 /* SKNode+behaviour.swift */,
+			);
+			path = extensions;
+			sourceTree = "<group>";
+		};
+		E36436F7220DEF6A004F46C0 /* Behaviour */ = {
+			isa = PBXGroup;
+			children = (
+				E36436F8220DEF9D004F46C0 /* BehaviourProtocol.swift */,
+				E36436FA220DF035004F46C0 /* FallBehaviour.swift */,
+				E36436FE220DF1D3004F46C0 /* BackAndForth.swift */,
+			);
+			path = Behaviour;
+			sourceTree = "<group>";
+		};
 		E36BEFDB220C8B44008C3B4C = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +155,7 @@
 		E36BEFE6220C8B44008C3B4C /* FallBall */ = {
 			isa = PBXGroup;
 			children = (
+				E36436F4220DEE97004F46C0 /* extensions */,
 				E36BF01B220C90BA008C3B4C /* models */,
 				E36BEFE7220C8B44008C3B4C /* AppDelegate.swift */,
 				E36BEFE9220C8B44008C3B4C /* GameScene.sks */,
@@ -148,9 +191,8 @@
 		E36BF01B220C90BA008C3B4C /* models */ = {
 			isa = PBXGroup;
 			children = (
-				E36BF01C220C90DB008C3B4C /* Barrier.swift */,
-				E36BF01F220C9152008C3B4C /* BarrierCreator.swift */,
-				E36BF026220CB8D5008C3B4C /* BarrierCreatorDelegate.swift */,
+				E36436F7220DEF6A004F46C0 /* Behaviour */,
+				E36436EF220DDEC4004F46C0 /* Barrier */,
 				E36BF029220CEF1A008C3B4C /* GameState.swift */,
 				E36BF02D220CF028008C3B4C /* States.swift */,
 			);
@@ -291,13 +333,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				E36BF02A220CEF1A008C3B4C /* GameState.swift in Sources */,
+				E36436F3220DE069004F46C0 /* RectBarrier.swift in Sources */,
+				E36436FD220DF12D004F46C0 /* SKNode+behaviour.swift in Sources */,
+				E36436FB220DF035004F46C0 /* FallBehaviour.swift in Sources */,
+				E36436F6220DEEB3004F46C0 /* SKScene+unit.swift in Sources */,
+				E36436F1220DDF7D004F46C0 /* BarrierProtocol.swift in Sources */,
 				E36BEFEE220C8B44008C3B4C /* GameScene.swift in Sources */,
 				E36BEFF0220C8B44008C3B4C /* GameViewController.swift in Sources */,
+				E36436F9220DEF9D004F46C0 /* BehaviourProtocol.swift in Sources */,
 				E36BF02E220CF028008C3B4C /* States.swift in Sources */,
+				E36436FF220DF1D3004F46C0 /* BackAndForth.swift in Sources */,
 				E36BF020220C9152008C3B4C /* BarrierCreator.swift in Sources */,
 				E36BEFE8220C8B44008C3B4C /* AppDelegate.swift in Sources */,
 				E36BF027220CB8D5008C3B4C /* BarrierCreatorDelegate.swift in Sources */,
-				E36BF01D220C90DB008C3B4C /* Barrier.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
