@@ -7,16 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E36436F1220DDF7D004F46C0 /* BarrierCreatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36436F0220DDF7D004F46C0 /* BarrierCreatorProtocol.swift */; };
-		E36436F3220DE069004F46C0 /* RectBarrier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36436F2220DE069004F46C0 /* RectBarrier.swift */; };
+		E36436F1220DDF7D004F46C0 /* FBBarrierCreatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36436F0220DDF7D004F46C0 /* FBBarrierCreatorProtocol.swift */; };
+		E36436F3220DE069004F46C0 /* FBRectBarrierCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36436F2220DE069004F46C0 /* FBRectBarrierCreator.swift */; };
 		E36436F6220DEEB3004F46C0 /* SKScene+unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36436F5220DEEB3004F46C0 /* SKScene+unit.swift */; };
-		E36436F9220DEF9D004F46C0 /* BehaviourProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36436F8220DEF9D004F46C0 /* BehaviourProtocol.swift */; };
-		E36436FB220DF035004F46C0 /* FallBehaviour.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36436FA220DF035004F46C0 /* FallBehaviour.swift */; };
+		E36436F9220DEF9D004F46C0 /* FBBehaviourProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36436F8220DEF9D004F46C0 /* FBBehaviourProtocol.swift */; };
+		E36436FB220DF035004F46C0 /* FBFallBehaviour.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36436FA220DF035004F46C0 /* FBFallBehaviour.swift */; };
 		E36436FD220DF12D004F46C0 /* SKNode+behaviour.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36436FC220DF12D004F46C0 /* SKNode+behaviour.swift */; };
-		E36436FF220DF1D3004F46C0 /* BackAndForth.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36436FE220DF1D3004F46C0 /* BackAndForth.swift */; };
-		E3643705220DF6F1004F46C0 /* BarrierQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3643704220DF6F1004F46C0 /* BarrierQueue.swift */; };
-		E3643709220E04C8004F46C0 /* ShapeNodeQueueDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3643708220E04C8004F46C0 /* ShapeNodeQueueDelegate.swift */; };
-		E364370B220E065E004F46C0 /* ShapeNodeQueueReuseStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E364370A220E065E004F46C0 /* ShapeNodeQueueReuseStrategy.swift */; };
+		E36436FF220DF1D3004F46C0 /* FBBackAndForth.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36436FE220DF1D3004F46C0 /* FBBackAndForth.swift */; };
+		E3643705220DF6F1004F46C0 /* FBNodeQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3643704220DF6F1004F46C0 /* FBNodeQueue.swift */; };
+		E3643709220E04C8004F46C0 /* FBNodeQueueDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3643708220E04C8004F46C0 /* FBNodeQueueDelegate.swift */; };
+		E364370B220E065E004F46C0 /* FBNodeQueueReuseStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E364370A220E065E004F46C0 /* FBNodeQueueReuseStrategy.swift */; };
+		E3643711220E4097004F46C0 /* FBNodeQueueOutOfSightStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3643710220E4097004F46C0 /* FBNodeQueueOutOfSightStrategy.swift */; };
 		E36BEFE8220C8B44008C3B4C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36BEFE7220C8B44008C3B4C /* AppDelegate.swift */; };
 		E36BEFEA220C8B44008C3B4C /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = E36BEFE9220C8B44008C3B4C /* GameScene.sks */; };
 		E36BEFEC220C8B44008C3B4C /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = E36BEFEB220C8B44008C3B4C /* Actions.sks */; };
@@ -27,8 +28,8 @@
 		E36BEFF8220C8B45008C3B4C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E36BEFF6220C8B45008C3B4C /* LaunchScreen.storyboard */; };
 		E36BF003220C8B45008C3B4C /* FallBallTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36BF002220C8B45008C3B4C /* FallBallTests.swift */; };
 		E36BF00E220C8B45008C3B4C /* FallBallUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36BF00D220C8B45008C3B4C /* FallBallUITests.swift */; };
-		E36BF02A220CEF1A008C3B4C /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36BF029220CEF1A008C3B4C /* GameState.swift */; };
-		E36BF02E220CF028008C3B4C /* States.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36BF02D220CF028008C3B4C /* States.swift */; };
+		E36BF02A220CEF1A008C3B4C /* FBGameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36BF029220CEF1A008C3B4C /* FBGameState.swift */; };
+		E36BF02E220CF028008C3B4C /* FBStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36BF02D220CF028008C3B4C /* FBStates.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,16 +50,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		E36436F0220DDF7D004F46C0 /* BarrierCreatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarrierCreatorProtocol.swift; sourceTree = "<group>"; };
-		E36436F2220DE069004F46C0 /* RectBarrier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectBarrier.swift; sourceTree = "<group>"; };
+		E36436F0220DDF7D004F46C0 /* FBBarrierCreatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBBarrierCreatorProtocol.swift; sourceTree = "<group>"; };
+		E36436F2220DE069004F46C0 /* FBRectBarrierCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBRectBarrierCreator.swift; sourceTree = "<group>"; };
 		E36436F5220DEEB3004F46C0 /* SKScene+unit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKScene+unit.swift"; sourceTree = "<group>"; };
-		E36436F8220DEF9D004F46C0 /* BehaviourProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BehaviourProtocol.swift; sourceTree = "<group>"; };
-		E36436FA220DF035004F46C0 /* FallBehaviour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FallBehaviour.swift; sourceTree = "<group>"; };
+		E36436F8220DEF9D004F46C0 /* FBBehaviourProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBBehaviourProtocol.swift; sourceTree = "<group>"; };
+		E36436FA220DF035004F46C0 /* FBFallBehaviour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBFallBehaviour.swift; sourceTree = "<group>"; };
 		E36436FC220DF12D004F46C0 /* SKNode+behaviour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKNode+behaviour.swift"; sourceTree = "<group>"; };
-		E36436FE220DF1D3004F46C0 /* BackAndForth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackAndForth.swift; sourceTree = "<group>"; };
-		E3643704220DF6F1004F46C0 /* BarrierQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarrierQueue.swift; sourceTree = "<group>"; };
-		E3643708220E04C8004F46C0 /* ShapeNodeQueueDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeNodeQueueDelegate.swift; sourceTree = "<group>"; };
-		E364370A220E065E004F46C0 /* ShapeNodeQueueReuseStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeNodeQueueReuseStrategy.swift; sourceTree = "<group>"; };
+		E36436FE220DF1D3004F46C0 /* FBBackAndForth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBBackAndForth.swift; sourceTree = "<group>"; };
+		E3643704220DF6F1004F46C0 /* FBNodeQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBNodeQueue.swift; sourceTree = "<group>"; };
+		E3643708220E04C8004F46C0 /* FBNodeQueueDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBNodeQueueDelegate.swift; sourceTree = "<group>"; };
+		E364370A220E065E004F46C0 /* FBNodeQueueReuseStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBNodeQueueReuseStrategy.swift; sourceTree = "<group>"; };
+		E3643710220E4097004F46C0 /* FBNodeQueueOutOfSightStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBNodeQueueOutOfSightStrategy.swift; sourceTree = "<group>"; };
 		E36BEFE4220C8B44008C3B4C /* FallBall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FallBall.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E36BEFE7220C8B44008C3B4C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E36BEFE9220C8B44008C3B4C /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -75,8 +77,8 @@
 		E36BF009220C8B45008C3B4C /* FallBallUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FallBallUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E36BF00D220C8B45008C3B4C /* FallBallUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FallBallUITests.swift; sourceTree = "<group>"; };
 		E36BF00F220C8B45008C3B4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E36BF029220CEF1A008C3B4C /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
-		E36BF02D220CF028008C3B4C /* States.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = States.swift; sourceTree = "<group>"; };
+		E36BF029220CEF1A008C3B4C /* FBGameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBGameState.swift; sourceTree = "<group>"; };
+		E36BF02D220CF028008C3B4C /* FBStates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBStates.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,16 +106,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		E36436EF220DDEC4004F46C0 /* Barrier */ = {
+		E36436EF220DDEC4004F46C0 /* BarrierCreator */ = {
 			isa = PBXGroup;
 			children = (
-				E3643704220DF6F1004F46C0 /* BarrierQueue.swift */,
-				E36436F0220DDF7D004F46C0 /* BarrierCreatorProtocol.swift */,
-				E36436F2220DE069004F46C0 /* RectBarrier.swift */,
-				E3643708220E04C8004F46C0 /* ShapeNodeQueueDelegate.swift */,
-				E364370A220E065E004F46C0 /* ShapeNodeQueueReuseStrategy.swift */,
+				E36436F0220DDF7D004F46C0 /* FBBarrierCreatorProtocol.swift */,
+				E36436F2220DE069004F46C0 /* FBRectBarrierCreator.swift */,
 			);
-			path = Barrier;
+			path = BarrierCreator;
 			sourceTree = "<group>";
 		};
 		E36436F4220DEE97004F46C0 /* extensions */ = {
@@ -128,11 +127,31 @@
 		E36436F7220DEF6A004F46C0 /* Behaviour */ = {
 			isa = PBXGroup;
 			children = (
-				E36436F8220DEF9D004F46C0 /* BehaviourProtocol.swift */,
-				E36436FA220DF035004F46C0 /* FallBehaviour.swift */,
-				E36436FE220DF1D3004F46C0 /* BackAndForth.swift */,
+				E36436F8220DEF9D004F46C0 /* FBBehaviourProtocol.swift */,
+				E36436FA220DF035004F46C0 /* FBFallBehaviour.swift */,
+				E36436FE220DF1D3004F46C0 /* FBBackAndForth.swift */,
 			);
 			path = Behaviour;
+			sourceTree = "<group>";
+		};
+		E364370E220E3BA7004F46C0 /* NodeQueue */ = {
+			isa = PBXGroup;
+			children = (
+				E3643704220DF6F1004F46C0 /* FBNodeQueue.swift */,
+				E3643708220E04C8004F46C0 /* FBNodeQueueDelegate.swift */,
+				E364370A220E065E004F46C0 /* FBNodeQueueReuseStrategy.swift */,
+				E3643710220E4097004F46C0 /* FBNodeQueueOutOfSightStrategy.swift */,
+			);
+			path = NodeQueue;
+			sourceTree = "<group>";
+		};
+		E364370F220E3ECE004F46C0 /* States */ = {
+			isa = PBXGroup;
+			children = (
+				E36BF029220CEF1A008C3B4C /* FBGameState.swift */,
+				E36BF02D220CF028008C3B4C /* FBStates.swift */,
+			);
+			path = States;
 			sourceTree = "<group>";
 		};
 		E36BEFDB220C8B44008C3B4C = {
@@ -194,10 +213,10 @@
 		E36BF01B220C90BA008C3B4C /* models */ = {
 			isa = PBXGroup;
 			children = (
+				E364370F220E3ECE004F46C0 /* States */,
+				E364370E220E3BA7004F46C0 /* NodeQueue */,
 				E36436F7220DEF6A004F46C0 /* Behaviour */,
-				E36436EF220DDEC4004F46C0 /* Barrier */,
-				E36BF029220CEF1A008C3B4C /* GameState.swift */,
-				E36BF02D220CF028008C3B4C /* States.swift */,
+				E36436EF220DDEC4004F46C0 /* BarrierCreator */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -335,20 +354,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E36BF02A220CEF1A008C3B4C /* GameState.swift in Sources */,
-				E36436F3220DE069004F46C0 /* RectBarrier.swift in Sources */,
+				E3643711220E4097004F46C0 /* FBNodeQueueOutOfSightStrategy.swift in Sources */,
+				E36BF02A220CEF1A008C3B4C /* FBGameState.swift in Sources */,
+				E36436F3220DE069004F46C0 /* FBRectBarrierCreator.swift in Sources */,
 				E36436FD220DF12D004F46C0 /* SKNode+behaviour.swift in Sources */,
-				E36436FB220DF035004F46C0 /* FallBehaviour.swift in Sources */,
+				E36436FB220DF035004F46C0 /* FBFallBehaviour.swift in Sources */,
 				E36436F6220DEEB3004F46C0 /* SKScene+unit.swift in Sources */,
-				E3643705220DF6F1004F46C0 /* BarrierQueue.swift in Sources */,
-				E36436F1220DDF7D004F46C0 /* BarrierCreatorProtocol.swift in Sources */,
+				E3643705220DF6F1004F46C0 /* FBNodeQueue.swift in Sources */,
+				E36436F1220DDF7D004F46C0 /* FBBarrierCreatorProtocol.swift in Sources */,
 				E36BEFEE220C8B44008C3B4C /* GameScene.swift in Sources */,
 				E36BEFF0220C8B44008C3B4C /* GameViewController.swift in Sources */,
-				E36436F9220DEF9D004F46C0 /* BehaviourProtocol.swift in Sources */,
-				E36BF02E220CF028008C3B4C /* States.swift in Sources */,
-				E3643709220E04C8004F46C0 /* ShapeNodeQueueDelegate.swift in Sources */,
-				E364370B220E065E004F46C0 /* ShapeNodeQueueReuseStrategy.swift in Sources */,
-				E36436FF220DF1D3004F46C0 /* BackAndForth.swift in Sources */,
+				E36436F9220DEF9D004F46C0 /* FBBehaviourProtocol.swift in Sources */,
+				E36BF02E220CF028008C3B4C /* FBStates.swift in Sources */,
+				E3643709220E04C8004F46C0 /* FBNodeQueueDelegate.swift in Sources */,
+				E364370B220E065E004F46C0 /* FBNodeQueueReuseStrategy.swift in Sources */,
+				E36436FF220DF1D3004F46C0 /* FBBackAndForth.swift in Sources */,
 				E36BEFE8220C8B44008C3B4C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

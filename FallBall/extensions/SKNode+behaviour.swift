@@ -10,7 +10,7 @@ import Foundation
 import SpriteKit
 
 extension SKNode {
-    func applyBehaviour(_ behaviour: BehaviourProtocol) {
+    func applyBehaviour(_ behaviour: FBBehaviourProtocol) {
         behaviour.run(inNode: self)
     }
 }

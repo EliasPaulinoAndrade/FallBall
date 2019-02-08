@@ -13,16 +13,15 @@ class GameScene: SKScene {
     
     static private let MAX_BALL_VELOCITY: CGFloat = 500
     
-    lazy var state: GameState = InitialState.init(scene: self)
+    lazy var state: FBGameState = InitialState.init(scene: self)
     
-    private var numberOfTaps: Int = 0
-    private var barrierQueue = ShapeNodeQueue.init()
+    private var barrierQueue = FBNodeQueue.init()
     
     var spwanTimer: Timer?
     var pointsTimer: Timer?
     
     lazy var ball: SKShapeNode = {
-        let unit = componentsSizeUnit()
+        let unit = SKScene.unit(forSceneFrame: self.frame)
         
         let ball = SKShapeNode.init(circleOfRadius: unit/2)
         let ballBody = SKPhysicsBody.init(circleOfRadius: unit/2)
@@ -39,7 +38,7 @@ class GameScene: SKScene {
     }()
     
     lazy var floorNode: SKShapeNode = {
-        let unit = componentsSizeUnit()
+        let unit = SKScene.unit(forSceneFrame: self.frame)
         
         let floorFrame = CGRect.init(
             x: -self.size.width/2,
@@ -142,7 +141,7 @@ class GameScene: SKScene {
     func beginSpawn() {
         self.spwanTimer = Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { (timer) in
             
-            if let barrierNode = self.barrierQueue.dequeueBarrier() {
+            if let barrierNode = self.barrierQueue.dequeueNode() {
                 self.addChild(barrierNode)
             }
         }
@@ -171,11 +170,6 @@ class GameScene: SKScene {
         self.messageLabel.fontSize = 100
     }
     
-    func componentsSizeUnit() -> CGFloat {
-        let w = (self.size.width + self.size.height) * 0.05
-        return w
-    }
-    
     override func didSimulatePhysics() {
         if let ballVelocityY = self.ball.physicsBody?.velocity.dy,
            ballVelocityY > GameScene.MAX_BALL_VELOCITY {
@@ -190,16 +184,7 @@ class GameScene: SKScene {
             state.ahead()
         }
         
-        guard self.numberOfTaps < 2 else {
-            return
-        }
-        
         self.ball.physicsBody?.applyImpulse(CGVector.init(dx: 0, dy: 500))
-        self.numberOfTaps += 1
-        
-        Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { (timer) in
-            self.numberOfTaps = 0
-        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -220,15 +205,9 @@ extension GameScene: SKPhysicsContactDelegate {
     }
 }
 
-extension GameScene: ShapeNodeQueueReuseStrategy {
-    func validadeReuse(ofNode node: SKNode) -> Bool {
-        return !self.intersects(node)
-    }
-}
-
-extension GameScene: ShapeNodeQueueDelegate {
+extension GameScene: FBNodeQueueDelegate {
     
-    func createNode(_ nodeQueue: ShapeNodeQueue) -> SKShapeNode {
+    func createNode(_ nodeQueue: FBNodeQueue) -> SKNode {
         
         let barrierRect = CGRect.init(
             x: -self.frame.width/2,
@@ -250,23 +229,26 @@ extension GameScene: ShapeNodeQueueDelegate {
         return newBarrierNode
     }
     
-    func setupNode(_ nodeQueue: ShapeNodeQueue, node: SKShapeNode) {
+    func setupNode(_ nodeQueue: FBNodeQueue, node: SKNode) {
+        
+        let unit = SKScene.unit(forSceneFrame: self.frame)
+        
         node.removeFromParent()
         node.removeAllActions()
         node.position = CGPoint.zero
         
-        node.applyBehaviour(FallBehaviour.init(
+        node.applyBehaviour(FBFallBehaviour.init(
             duration: 1,
             distance: -300
         ))
         
-        node.applyBehaviour(BackAndForth.init(
+        node.applyBehaviour(FBBackAndForth.init(
             duration: 2,
-            distance: 5 * componentsSizeUnit()
+            distance: 5 * unit
         ))
     }
     
-    func resuseStrategy(_ nodeQueue: ShapeNodeQueue) -> ShapeNodeQueueReuseStrategy {
-        return self
+    func resuseStrategy(_ nodeQueue: FBNodeQueue) -> FBNodeQueueReuseStrategy {
+        return FBNodeQueueOutOfSightStrategy.init(withViewPortNode: self)
     }
 }

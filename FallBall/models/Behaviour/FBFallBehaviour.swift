@@ -9,7 +9,7 @@
 import Foundation
 import SpriteKit
 
-struct FallBehaviour: BehaviourProtocol {
+struct FBFallBehaviour: FBBehaviourProtocol {
     
     var duration: TimeInterval
     var distance: CGFloat

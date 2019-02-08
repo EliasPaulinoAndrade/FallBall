@@ -9,7 +9,7 @@
 import Foundation
 import SpriteKit
 
-protocol GameState {
+protocol FBGameState {
     var scene: GameScene? {get set}
     func ahead() 
 }

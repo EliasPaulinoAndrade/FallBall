@@ -9,7 +9,7 @@
 import Foundation
 import SpriteKit
 
-class RectBarrierCreator: BarrierCreatorProtocol {
+class FBRectBarrierCreator: FBBarrierCreatorProtocol {
     
     static private let DEFAULT_HORIZONTAL_DISTANCE: CGFloat = 10
     static private let DEFAULT_HORIZONTAL_DURATION: TimeInterval = 1

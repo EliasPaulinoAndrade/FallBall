@@ -9,7 +9,7 @@
 import Foundation
 import SpriteKit
 
-protocol BehaviourProtocol {
+protocol FBBehaviourProtocol {
     func run(inNode node: SKNode)
 }
 

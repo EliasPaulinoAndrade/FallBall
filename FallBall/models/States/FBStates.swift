@@ -9,7 +9,7 @@
 import Foundation
 import SpriteKit
 
-struct InitialState: GameState {
+struct InitialState: FBGameState {
     
     weak var scene: GameScene?
     
@@ -26,7 +26,7 @@ struct InitialState: GameState {
     }
 }
 
-struct PlayingState: GameState {
+struct PlayingState: FBGameState {
     weak var scene: GameScene?
     
     func ahead() {
@@ -43,7 +43,7 @@ struct PlayingState: GameState {
     }
 }
 
-struct DeadState: GameState {
+struct DeadState: FBGameState {
     weak var scene: GameScene?
     
     func ahead() {

@@ -9,7 +9,7 @@
 import Foundation
 import SpriteKit
 
-struct BackAndForth: BehaviourProtocol {
+struct FBBackAndForth: FBBehaviourProtocol {
     
     var duration: TimeInterval
     var distance: CGFloat
