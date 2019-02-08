@@ -56,6 +56,8 @@ struct DeadState: GameState {
         self.scene?.resetBarries()
         self.scene?.centrilizeMessageNode()
         self.scene?.messageLabel.text = "0"
+        self.scene?.ball.physicsBody?.velocity = CGVector.zero
+        
         
         if let scene = self.scene {
             self.scene?.state = PlayingState.init(scene: scene)

@@ -36,7 +36,7 @@ class GameScene: SKScene {
         return ball
     }()
     
-    lazy var floor: SKShapeNode = {
+    lazy var floorNode: SKShapeNode = {
         let unit = componentsSizeUnit()
         
         let floorFrame = CGRect.init(
@@ -49,7 +49,6 @@ class GameScene: SKScene {
         let floor = SKShapeNode.init(rect: floorFrame)
         let floorBody = SKPhysicsBody.init(edgeLoopFrom: floorFrame)
         
-        floor.fillColor = SKColor.white
         floor.physicsBody = floorBody
         floor.physicsBody?.categoryBitMask = 0010
         floor.physicsBody?.collisionBitMask = 0000
@@ -70,15 +69,78 @@ class GameScene: SKScene {
         return label
     }()
     
+    lazy var skyNode: SKShapeNode = {
+        
+        let skyRect = CGRect.init(
+            x: -self.size.width/2,
+            y: self.size.height/2 - 20,
+            width: self.size.width,
+            height: 20
+        )
+        
+        let sky = SKShapeNode.init(rect: skyRect)
+        let skyBody = SKPhysicsBody.init(edgeLoopFrom: skyRect)
+        
+        sky.physicsBody = skyBody
+        skyBody.categoryBitMask = 0010
+        skyBody.collisionBitMask = 0000
+        skyBody.contactTestBitMask = 0011
+        
+        sky.fillColor = SKColor.white
+        
+        return sky
+    }()
+    
+    
     override func didMove(to view: SKView) {
         
         barrierCreator.delegate = self
         self.physicsWorld.contactDelegate = self
         
         self.addChild(ball)
-        self.addChild(floor)
+        self.addChild(floorNode)
         self.addChild(messageLabel)
+        self.addChild(skyNode)
         self.isPaused = true
+        self.createSpikes(numberOfSpikes: 9, spikeHeight: 30)
+    }
+    
+    func createSpikes(numberOfSpikes: Int, spikeHeight: CGFloat) {
+        let spikeWidth = self.size.width/CGFloat(numberOfSpikes)
+        
+        var currentOrigin = CGPoint.init(x: -self.size.width/2, y: self.size.height/2 - 20)
+        var pivotPoint = CGPoint.zero
+        for _ in 0..<numberOfSpikes {
+            
+            let bezier = UIBezierPath.init()
+            pivotPoint = currentOrigin
+            
+            bezier.move(to: currentOrigin)
+            pivotPoint.x += spikeWidth/2
+            pivotPoint.y -= spikeHeight
+            bezier.addLine(to: pivotPoint)
+            pivotPoint.x += spikeWidth/2
+            pivotPoint.y += spikeHeight
+            bezier.addLine(to: pivotPoint)
+            bezier.addLine(to: currentOrigin)
+            currentOrigin = pivotPoint
+            
+            let spikePath = bezier.cgPath
+            
+            let spikeNode = SKShapeNode.init(path: spikePath)
+            spikeNode.fillColor = SKColor.white
+            spikeNode.name = "spike"
+            
+            let spikeBody = SKPhysicsBody.init(edgeLoopFrom: spikePath)
+            
+            spikeBody.categoryBitMask = 0010
+            spikeBody.collisionBitMask = 0000
+            spikeBody.contactTestBitMask = 0011
+            spikeNode.physicsBody = spikeBody
+            
+            self.addChild(spikeNode)
+        }
+        
     }
     
     func beginCountPoints() {
@@ -116,7 +178,7 @@ class GameScene: SKScene {
     func resetBarries() {
 
         self.scene?.children.forEach({ (child) in
-            if child.name != "ball" && child.name != "floor" {
+            if child.name == "barrier" {
                 child.position = CGPoint.init(x: self.size.width * 2, y: self.size.height * 2)
             }
         })

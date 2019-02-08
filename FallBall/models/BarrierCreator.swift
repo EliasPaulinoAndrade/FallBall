@@ -64,6 +64,7 @@ class BarrierCreator {
         } else {
             let barrierBody = SKPhysicsBody.init(edgeLoopFrom: barrierRect)
             newBarrierNode = SKShapeNode.init(rect: barrierRect)
+            newBarrierNode.name = "barrier"
             newBarrierNode.physicsBody = barrierBody
             newBarrierNode.physicsBody?.categoryBitMask = 0010
             newBarrierNode.physicsBody?.collisionBitMask = 0000
