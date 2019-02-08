@@ -9,10 +9,14 @@
 import Foundation
 import SpriteKit
 
+
+/// Estado inicial do game, antes o usuário clicar na tela
 struct InitialState: FBGameState {
     
     weak var scene: GameScene?
     
+    
+    /// vai para o estado de Playing e seta o jogo inicialmente
     func ahead() {
         self.scene?.isPaused = false
         self.scene?.beginSpawn()
@@ -26,9 +30,13 @@ struct InitialState: FBGameState {
     }
 }
 
+
+/// Estado de jogando, enquanto o usuário interage com a tela
 struct PlayingState: FBGameState {
     weak var scene: GameScene?
     
+    
+    /// o proximo estado é o de morte, portando o jogo é pausado.
     func ahead() {
         self.scene?.isPaused = true
         self.scene?.ball.position = CGPoint.zero
@@ -43,9 +51,13 @@ struct PlayingState: FBGameState {
     }
 }
 
+
+/// Estando em que o usuario morreu
 struct DeadState: FBGameState {
     weak var scene: GameScene?
     
+    
+    /// o proximo estado, playing, é chamado quando o usuário da um tap na tela
     func ahead() {
         self.scene?.isPaused = false
         

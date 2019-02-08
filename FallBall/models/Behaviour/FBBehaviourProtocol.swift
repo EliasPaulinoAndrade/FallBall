@@ -9,6 +9,8 @@
 import Foundation
 import SpriteKit
 
+
+/// Representa um corportamento atribuido a um node. Usado para aplicar actions reutilizaveis em nodes.
 protocol FBBehaviourProtocol {
     func run(inNode node: SKNode)
 }

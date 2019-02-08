@@ -9,6 +9,8 @@
 import Foundation
 import SpriteKit
 
+
+/// O comportamento de vai-e-vem de um node. Ele faz o movimento a partir da posição inicial do node.
 struct FBBackAndForth: FBBehaviourProtocol {
     
     var duration: TimeInterval

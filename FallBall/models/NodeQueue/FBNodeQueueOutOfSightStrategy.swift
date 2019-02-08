@@ -9,6 +9,8 @@
 import Foundation
 import SpriteKit
 
+
+/// Uma das estratégia concretas de reutilização de nodes, um node pode ser reutilizado se ele saiu da tela visivel.
 struct FBNodeQueueOutOfSightStrategy: FBNodeQueueReuseStrategy {
     weak var viewPortNode: SKNode?
     

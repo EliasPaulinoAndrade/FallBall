@@ -9,6 +9,8 @@
 import Foundation
 import SpriteKit
 
+
+/// Representa uma estrategia de reuso de nodes
 protocol FBNodeQueueReuseStrategy {
     func validadeReuse(ofNode node: SKNode) -> Bool
 }

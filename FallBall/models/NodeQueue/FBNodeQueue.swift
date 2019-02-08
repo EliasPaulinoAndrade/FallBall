@@ -9,10 +9,16 @@
 import Foundation
 import SpriteKit
 
+
+/// Uma fila usada para reaproveitar nodes tendo em vista alguma estatégia de reuso(é usado economizar no processmento de usar varios nodes sem necessidades)
 class FBNodeQueue {
     private var nodes: [SKNode] = []
     var delegate: FBNodeQueueDelegate?
     
+    
+    /// Chame para desempilhar um node de acordo com a estrategia de reuso. Caso a estrategia permita que algum node seja reutilizado, ele vai ser. Se não permitir, um novo node será criado, e ele poderá ser reutilizado no futuro.
+    ///
+    /// - Returns: o node
     func dequeueNode() -> SKNode? {
         var newNode: SKNode?
         
@@ -30,14 +36,12 @@ class FBNodeQueue {
                 
             } else {
                 if let node = delegate?.createNode(self) {
-                    delegate?.setupNode(self, node: node)
                     self.nodes.append(node)
                     newNode = node
                 }
             }
         } else {
             if let node = delegate?.createNode(self) {
-                delegate?.setupNode(self, node: node)
                 self.nodes.append(node)
                 newNode = node
             }

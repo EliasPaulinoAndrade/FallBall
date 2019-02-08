@@ -9,7 +9,11 @@
 import Foundation
 import SpriteKit
 
+
+/// Representa um estado do jogo
 protocol FBGameState {
     var scene: GameScene? {get set}
-    func ahead() 
+    
+    /// chamado quando se quer ir ao proximo estado
+    func ahead()
 }

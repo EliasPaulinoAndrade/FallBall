@@ -9,6 +9,8 @@
 import Foundation
 import SpriteKit
 
+
+/// O comportamento de queda de um node.
 struct FBFallBehaviour: FBBehaviourProtocol {
     
     var duration: TimeInterval

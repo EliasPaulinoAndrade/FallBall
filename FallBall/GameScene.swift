@@ -16,6 +16,7 @@ class GameScene: SKScene {
     lazy var state: FBGameState = InitialState.init(scene: self)
     
     private var barrierQueue = FBNodeQueue.init()
+    private var barrierFactory = FBBarrierFactory.init()
     
     var spwanTimer: Timer?
     var pointsTimer: Timer?
@@ -209,43 +210,18 @@ extension GameScene: FBNodeQueueDelegate {
     
     func createNode(_ nodeQueue: FBNodeQueue) -> SKNode {
         
-        let barrierRect = CGRect.init(
-            x: -self.frame.width/2,
-            y: self.frame.height/2 - 100,
-            width: self.frame.width - 5 * SKScene.unit(forSceneFrame: self.frame),
-            height: 20
-        )
-        
-        let barrierBody = SKPhysicsBody.init(edgeLoopFrom: barrierRect)
-        let newBarrierNode = SKShapeNode.init(rect: barrierRect)
-        
-        newBarrierNode.fillColor = SKColor.white
-        newBarrierNode.name = "barrier"
-        newBarrierNode.physicsBody = barrierBody
-        newBarrierNode.physicsBody?.categoryBitMask = 0010
-        newBarrierNode.physicsBody?.collisionBitMask = 0000
-        newBarrierNode.physicsBody?.contactTestBitMask = 0011
-        
-        return newBarrierNode
+        return barrierFactory.barrier(ofType: .rect, toParentWithRect: self.frame)
     }
     
     func setupNode(_ nodeQueue: FBNodeQueue, node: SKNode) {
         
-        let unit = SKScene.unit(forSceneFrame: self.frame)
+        let rectCreator = FBRectBarrierCreator.init()
         
         node.removeFromParent()
         node.removeAllActions()
         node.position = CGPoint.zero
         
-        node.applyBehaviour(FBFallBehaviour.init(
-            duration: 1,
-            distance: -300
-        ))
-        
-        node.applyBehaviour(FBBackAndForth.init(
-            duration: 2,
-            distance: 5 * unit
-        ))
+        rectCreator.resetBehaviour(inBarrier: node, inParentWithFrame: self.frame)
     }
     
     func resuseStrategy(_ nodeQueue: FBNodeQueue) -> FBNodeQueueReuseStrategy {

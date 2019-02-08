@@ -9,6 +9,9 @@
 import Foundation
 import SpriteKit
 
+
+/// Representa alguem responsavel por criar um tipo de obstaculo
 protocol FBBarrierCreatorProtocol {
-    func barrierNode(withRect parentRect: CGRect) -> SKShapeNode
+    func barrierNode(withParentRect parentRect: CGRect) -> SKShapeNode
+    func resetBehaviour(inBarrier barrier: SKNode, inParentWithFrame parentRect: CGRect)
 }

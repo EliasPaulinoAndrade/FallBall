@@ -18,6 +18,8 @@
 		E3643709220E04C8004F46C0 /* FBNodeQueueDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3643708220E04C8004F46C0 /* FBNodeQueueDelegate.swift */; };
 		E364370B220E065E004F46C0 /* FBNodeQueueReuseStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E364370A220E065E004F46C0 /* FBNodeQueueReuseStrategy.swift */; };
 		E3643711220E4097004F46C0 /* FBNodeQueueOutOfSightStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3643710220E4097004F46C0 /* FBNodeQueueOutOfSightStrategy.swift */; };
+		E3643713220E464C004F46C0 /* FBBarrierFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3643712220E464C004F46C0 /* FBBarrierFactory.swift */; };
+		E3643715220E466D004F46C0 /* FBBarrierType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3643714220E466D004F46C0 /* FBBarrierType.swift */; };
 		E36BEFE8220C8B44008C3B4C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36BEFE7220C8B44008C3B4C /* AppDelegate.swift */; };
 		E36BEFEA220C8B44008C3B4C /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = E36BEFE9220C8B44008C3B4C /* GameScene.sks */; };
 		E36BEFEC220C8B44008C3B4C /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = E36BEFEB220C8B44008C3B4C /* Actions.sks */; };
@@ -61,6 +63,8 @@
 		E3643708220E04C8004F46C0 /* FBNodeQueueDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBNodeQueueDelegate.swift; sourceTree = "<group>"; };
 		E364370A220E065E004F46C0 /* FBNodeQueueReuseStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBNodeQueueReuseStrategy.swift; sourceTree = "<group>"; };
 		E3643710220E4097004F46C0 /* FBNodeQueueOutOfSightStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBNodeQueueOutOfSightStrategy.swift; sourceTree = "<group>"; };
+		E3643712220E464C004F46C0 /* FBBarrierFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBBarrierFactory.swift; sourceTree = "<group>"; };
+		E3643714220E466D004F46C0 /* FBBarrierType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBBarrierType.swift; sourceTree = "<group>"; };
 		E36BEFE4220C8B44008C3B4C /* FallBall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FallBall.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E36BEFE7220C8B44008C3B4C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E36BEFE9220C8B44008C3B4C /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -111,6 +115,8 @@
 			children = (
 				E36436F0220DDF7D004F46C0 /* FBBarrierCreatorProtocol.swift */,
 				E36436F2220DE069004F46C0 /* FBRectBarrierCreator.swift */,
+				E3643712220E464C004F46C0 /* FBBarrierFactory.swift */,
+				E3643714220E466D004F46C0 /* FBBarrierType.swift */,
 			);
 			path = BarrierCreator;
 			sourceTree = "<group>";
@@ -368,8 +374,10 @@
 				E36BF02E220CF028008C3B4C /* FBStates.swift in Sources */,
 				E3643709220E04C8004F46C0 /* FBNodeQueueDelegate.swift in Sources */,
 				E364370B220E065E004F46C0 /* FBNodeQueueReuseStrategy.swift in Sources */,
+				E3643715220E466D004F46C0 /* FBBarrierType.swift in Sources */,
 				E36436FF220DF1D3004F46C0 /* FBBackAndForth.swift in Sources */,
 				E36BEFE8220C8B44008C3B4C /* AppDelegate.swift in Sources */,
+				E3643713220E464C004F46C0 /* FBBarrierFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
