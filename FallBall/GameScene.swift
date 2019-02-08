@@ -29,7 +29,7 @@ class GameScene: SKScene {
         ball.fillColor = SKColor.white
         ball.physicsBody = ballBody
         ball.physicsBody?.categoryBitMask = 0001
-        ball.physicsBody?.collisionBitMask = 0010
+        ball.physicsBody?.collisionBitMask = 0000
         ball.physicsBody?.contactTestBitMask = 0010
         ball.name = "ball"
         
@@ -41,18 +41,20 @@ class GameScene: SKScene {
         
         let floorFrame = CGRect.init(
             x: -self.size.width/2,
-            y: -self.size.height/2 - unit/2,
+            y: -self.size.height/2 - unit,
             width: self.size.width,
-            height: 1
+            height: 10
         )
         
         let floor = SKShapeNode.init(rect: floorFrame)
         let floorBody = SKPhysicsBody.init(edgeLoopFrom: floorFrame)
         
+        floor.fillColor = SKColor.white
         floor.physicsBody = floorBody
         floor.physicsBody?.categoryBitMask = 0010
-        floor.physicsBody?.collisionBitMask = 0011
+        floor.physicsBody?.collisionBitMask = 0000
         floor.physicsBody?.contactTestBitMask = 0011
+        floor.name = "floor"
         
         return floor
     }()
@@ -114,7 +116,7 @@ class GameScene: SKScene {
     func resetBarries() {
 
         self.scene?.children.forEach({ (child) in
-            if child.name != "ball" {
+            if child.name != "ball" && child.name != "floor" {
                 child.position = CGPoint.init(x: self.size.width * 2, y: self.size.height * 2)
             }
         })

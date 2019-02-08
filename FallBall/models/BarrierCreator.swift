@@ -66,7 +66,7 @@ class BarrierCreator {
             newBarrierNode = SKShapeNode.init(rect: barrierRect)
             newBarrierNode.physicsBody = barrierBody
             newBarrierNode.physicsBody?.categoryBitMask = 0010
-            newBarrierNode.physicsBody?.collisionBitMask = 0011
+            newBarrierNode.physicsBody?.collisionBitMask = 0000
             newBarrierNode.physicsBody?.contactTestBitMask = 0011
         }
         
