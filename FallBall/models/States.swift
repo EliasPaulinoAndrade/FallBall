@@ -47,7 +47,6 @@ struct DeadState: GameState {
     weak var scene: GameScene?
     
     func ahead() {
-        
         self.scene?.isPaused = false
         
         self.scene?.ball.position = CGPoint.zero

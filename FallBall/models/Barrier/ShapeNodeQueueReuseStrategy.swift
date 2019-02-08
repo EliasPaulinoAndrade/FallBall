@@ -1,5 +1,5 @@
 //
-//  BarrierProtocol.swift
+//  ShapeNodeQueueReuseStrategy.swift
 //  FallBall
 //
 //  Created by Elias Paulino on 08/02/19.
@@ -9,6 +9,6 @@
 import Foundation
 import SpriteKit
 
-protocol BarrierProtocol {
-    func barrierNode(_ barrierProtocol: BarrierProtocol, withRect parentRect: CGRect) -> SKShapeNode
+protocol ShapeNodeQueueReuseStrategy {
+    func validadeReuse(ofNode node: SKNode) -> Bool
 }

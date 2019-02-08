@@ -9,7 +9,7 @@
 import Foundation
 import SpriteKit
 
-class RectBarrier: BarrierProtocol {
+class RectBarrierCreator: BarrierCreatorProtocol {
     
     static private let DEFAULT_HORIZONTAL_DISTANCE: CGFloat = 10
     static private let DEFAULT_HORIZONTAL_DURATION: TimeInterval = 1
@@ -17,7 +17,7 @@ class RectBarrier: BarrierProtocol {
     static private let DEFAULT_VERTICAL_DURATION: TimeInterval = 2
     static private let DEFAULT_BARRIER_COLOR: SKColor = SKColor.white
     
-    func barrierNode(_ barrierProtocol: BarrierProtocol, withRect parentRect: CGRect) -> SKShapeNode {
+    func barrierNode(withRect parentRect: CGRect) -> SKShapeNode {
         
         let barrierRect = CGRect.init(
             x: -parentRect.width/2,

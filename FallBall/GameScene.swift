@@ -16,7 +16,7 @@ class GameScene: SKScene {
     lazy var state: GameState = InitialState.init(scene: self)
     
     private var numberOfTaps: Int = 0
-    private var barrierCreator = BarrierCreator.init()
+    private var barrierQueue = ShapeNodeQueue.init()
     
     var spwanTimer: Timer?
     var pointsTimer: Timer?
@@ -73,7 +73,7 @@ class GameScene: SKScene {
     
     override func didMove(to view: SKView) {
         
-        barrierCreator.delegate = self
+        barrierQueue.delegate = self
         self.physicsWorld.contactDelegate = self
         
         self.addChild(ball)
@@ -142,14 +142,7 @@ class GameScene: SKScene {
     func beginSpawn() {
         self.spwanTimer = Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { (timer) in
             
-            let unit = self.componentsSizeUnit()
-            
-            if let barrierNode = self.barrierCreator.dequeueBarrier(withRect: CGRect.init(
-                x: -self.frame.width/2,
-                y: self.frame.height/2 - 100,
-                width: self.frame.width - 5 * unit,
-                height: 20
-            )) {
+            if let barrierNode = self.barrierQueue.dequeueBarrier() {
                 self.addChild(barrierNode)
             }
         }
@@ -219,27 +212,61 @@ class GameScene: SKScene {
     }
 }
 
-extension GameScene: BarrierCreatorDelegate {
-    func responsible(by: BarrierCreator) -> SKScene {
-        return self
-    }
-    
-    func verticalMovingDistanceAndDuration(_ creator: BarrierCreator) -> (distance: CGFloat, duration: TimeInterval) {
-        return (distance: -300, duration: 1)
-    }
-    
-    func horizontalMovingDistanceAndDuration(_ creator: BarrierCreator) -> (distance: CGFloat, duration: TimeInterval) {
-        return (distance: 5 * componentsSizeUnit(), duration: 2)
-    }
-    
-    func barrierColor(_ creator: BarrierCreator) -> SKColor {
-        return SKColor.white
+extension GameScene: SKPhysicsContactDelegate {
+    func didBegin(_ contact: SKPhysicsContact) {
+        if self.state is PlayingState {
+            self.state.ahead()
+        }
     }
 }
 
-extension GameScene: SKPhysicsContactDelegate {
-    func didBegin(_ contact: SKPhysicsContact) {
+extension GameScene: ShapeNodeQueueReuseStrategy {
+    func validadeReuse(ofNode node: SKNode) -> Bool {
+        return !self.intersects(node)
+    }
+}
+
+extension GameScene: ShapeNodeQueueDelegate {
     
-        self.state.ahead()
+    func createNode(_ nodeQueue: ShapeNodeQueue) -> SKShapeNode {
+        
+        let barrierRect = CGRect.init(
+            x: -self.frame.width/2,
+            y: self.frame.height/2 - 100,
+            width: self.frame.width - 5 * SKScene.unit(forSceneFrame: self.frame),
+            height: 20
+        )
+        
+        let barrierBody = SKPhysicsBody.init(edgeLoopFrom: barrierRect)
+        let newBarrierNode = SKShapeNode.init(rect: barrierRect)
+        
+        newBarrierNode.fillColor = SKColor.white
+        newBarrierNode.name = "barrier"
+        newBarrierNode.physicsBody = barrierBody
+        newBarrierNode.physicsBody?.categoryBitMask = 0010
+        newBarrierNode.physicsBody?.collisionBitMask = 0000
+        newBarrierNode.physicsBody?.contactTestBitMask = 0011
+        
+        return newBarrierNode
+    }
+    
+    func setupNode(_ nodeQueue: ShapeNodeQueue, node: SKShapeNode) {
+        node.removeFromParent()
+        node.removeAllActions()
+        node.position = CGPoint.zero
+        
+        node.applyBehaviour(FallBehaviour.init(
+            duration: 1,
+            distance: -300
+        ))
+        
+        node.applyBehaviour(BackAndForth.init(
+            duration: 2,
+            distance: 5 * componentsSizeUnit()
+        ))
+    }
+    
+    func resuseStrategy(_ nodeQueue: ShapeNodeQueue) -> ShapeNodeQueueReuseStrategy {
+        return self
     }
 }
