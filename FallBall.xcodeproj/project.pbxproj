@@ -17,6 +17,11 @@
 		E36BEFF8220C8B45008C3B4C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E36BEFF6220C8B45008C3B4C /* LaunchScreen.storyboard */; };
 		E36BF003220C8B45008C3B4C /* FallBallTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36BF002220C8B45008C3B4C /* FallBallTests.swift */; };
 		E36BF00E220C8B45008C3B4C /* FallBallUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36BF00D220C8B45008C3B4C /* FallBallUITests.swift */; };
+		E36BF01D220C90DB008C3B4C /* Barrier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36BF01C220C90DB008C3B4C /* Barrier.swift */; };
+		E36BF020220C9152008C3B4C /* BarrierCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36BF01F220C9152008C3B4C /* BarrierCreator.swift */; };
+		E36BF027220CB8D5008C3B4C /* BarrierCreatorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36BF026220CB8D5008C3B4C /* BarrierCreatorDelegate.swift */; };
+		E36BF02A220CEF1A008C3B4C /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36BF029220CEF1A008C3B4C /* GameState.swift */; };
+		E36BF02E220CF028008C3B4C /* States.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36BF02D220CF028008C3B4C /* States.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +58,11 @@
 		E36BF009220C8B45008C3B4C /* FallBallUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FallBallUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E36BF00D220C8B45008C3B4C /* FallBallUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FallBallUITests.swift; sourceTree = "<group>"; };
 		E36BF00F220C8B45008C3B4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E36BF01C220C90DB008C3B4C /* Barrier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Barrier.swift; sourceTree = "<group>"; };
+		E36BF01F220C9152008C3B4C /* BarrierCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarrierCreator.swift; sourceTree = "<group>"; };
+		E36BF026220CB8D5008C3B4C /* BarrierCreatorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarrierCreatorDelegate.swift; sourceTree = "<group>"; };
+		E36BF029220CEF1A008C3B4C /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
+		E36BF02D220CF028008C3B4C /* States.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = States.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +113,7 @@
 		E36BEFE6220C8B44008C3B4C /* FallBall */ = {
 			isa = PBXGroup;
 			children = (
+				E36BF01B220C90BA008C3B4C /* models */,
 				E36BEFE7220C8B44008C3B4C /* AppDelegate.swift */,
 				E36BEFE9220C8B44008C3B4C /* GameScene.sks */,
 				E36BEFEB220C8B44008C3B4C /* Actions.sks */,
@@ -132,6 +143,18 @@
 				E36BF00F220C8B45008C3B4C /* Info.plist */,
 			);
 			path = FallBallUITests;
+			sourceTree = "<group>";
+		};
+		E36BF01B220C90BA008C3B4C /* models */ = {
+			isa = PBXGroup;
+			children = (
+				E36BF01C220C90DB008C3B4C /* Barrier.swift */,
+				E36BF01F220C9152008C3B4C /* BarrierCreator.swift */,
+				E36BF026220CB8D5008C3B4C /* BarrierCreatorDelegate.swift */,
+				E36BF029220CEF1A008C3B4C /* GameState.swift */,
+				E36BF02D220CF028008C3B4C /* States.swift */,
+			);
+			path = models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,9 +290,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E36BF02A220CEF1A008C3B4C /* GameState.swift in Sources */,
 				E36BEFEE220C8B44008C3B4C /* GameScene.swift in Sources */,
 				E36BEFF0220C8B44008C3B4C /* GameViewController.swift in Sources */,
+				E36BF02E220CF028008C3B4C /* States.swift in Sources */,
+				E36BF020220C9152008C3B4C /* BarrierCreator.swift in Sources */,
 				E36BEFE8220C8B44008C3B4C /* AppDelegate.swift in Sources */,
+				E36BF027220CB8D5008C3B4C /* BarrierCreatorDelegate.swift in Sources */,
+				E36BF01D220C90DB008C3B4C /* Barrier.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
