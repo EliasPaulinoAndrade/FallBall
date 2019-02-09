@@ -210,12 +210,12 @@ extension GameScene: FBNodeQueueDelegate {
     
     func createNode(_ nodeQueue: FBNodeQueue) -> SKNode {
         
-        return barrierFactory.barrier(ofType: .rect, toParentWithRect: self.frame)
+        return barrierFactory.barrier(ofType: .ring, toParentWithRect: self.frame)
     }
     
     func setupNode(_ nodeQueue: FBNodeQueue, node: SKNode) {
         
-        let rectCreator = FBRectBarrierCreator.init()
+        let rectCreator = FBRingBarrierCreator.init()
         
         node.removeFromParent()
         node.removeAllActions()

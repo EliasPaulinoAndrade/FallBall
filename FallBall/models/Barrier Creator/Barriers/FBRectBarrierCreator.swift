@@ -22,7 +22,7 @@ class FBRectBarrierCreator: FBBarrierCreatorProtocol {
         
         let barrierRect = CGRect.init(
             x: -parentRect.width/2,
-            y: parentRect.height/2 - 100,
+            y: parentRect.height/2,
             width: parentRect.width - 5 * SKScene.unit(forSceneFrame: parentRect),
             height: 20
         )

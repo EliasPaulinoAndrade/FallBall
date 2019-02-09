@@ -9,5 +9,5 @@
 import Foundation
 
 enum FBBarrierType {
-    case rect
+    case rect, ring
 }
