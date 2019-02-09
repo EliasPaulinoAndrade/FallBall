@@ -217,7 +217,7 @@
 			isa = PBXGroup;
 			children = (
 				E36436F4220DEE97004F46C0 /* extensions */,
-				E36BF01B220C90BA008C3B4C /* models */,
+				E36BF01B220C90BA008C3B4C /* Models */,
 				E36BEFE7220C8B44008C3B4C /* AppDelegate.swift */,
 				E36BEFE9220C8B44008C3B4C /* GameScene.sks */,
 				E36BEFEB220C8B44008C3B4C /* Actions.sks */,
@@ -249,7 +249,7 @@
 			path = FallBallUITests;
 			sourceTree = "<group>";
 		};
-		E36BF01B220C90BA008C3B4C /* models */ = {
+		E36BF01B220C90BA008C3B4C /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				E364371D220EF9E3004F46C0 /* Nodes */,
@@ -258,7 +258,7 @@
 				E36436F7220DEF6A004F46C0 /* Behaviour */,
 				E36436EF220DDEC4004F46C0 /* Barrier Creator */,
 			);
-			path = models;
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
