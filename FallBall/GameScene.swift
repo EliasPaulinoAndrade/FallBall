@@ -15,7 +15,10 @@ class GameScene: SKScene {
     
     lazy var state: FBGameState = InitialState.init(scene: self)
     
-    private var barrierQueue = FBNodeQueue.init()
+    private var ringQueue = FBNodeQueue.init()
+    
+    private var jumpSpikesQueue = FBNodeQueue.init()
+    
     private var barrierFactory = FBBarrierFactory.init()
     
     var spwanTimer: Timer?
@@ -73,7 +76,9 @@ class GameScene: SKScene {
     
     override func didMove(to view: SKView) {
         
-        barrierQueue.delegate = self
+        ringQueue.delegate = self
+        jumpSpikesQueue.delegate = self
+
         self.physicsWorld.contactDelegate = self
         
         self.addChild(ball)
@@ -140,11 +145,17 @@ class GameScene: SKScene {
     }
     
     func beginSpawn() {
-        self.spwanTimer = Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { (timer) in
+        self.spwanTimer = Timer.scheduledTimer(withTimeInterval: 5, repeats: true) { (timer) in
             
-            if let barrierNode = self.barrierQueue.dequeueNode() {
+            if let barrierNode = self.ringQueue.dequeueNode() {
                 self.addChild(barrierNode)
             }
+            
+            if Bool.random() {
+                if let barrierNode = self.jumpSpikesQueue.dequeueNode() {
+                    self.addChild(barrierNode)
+                }
+            } 
         }
     }
     
@@ -155,7 +166,7 @@ class GameScene: SKScene {
     func resetBarries() {
 
         self.scene?.children.forEach({ (child) in
-            if child.name == "barrier" {
+            if child.name == "jumpSpikes" || child.name == "ring" {
                 child.position = CGPoint.init(x: self.size.width * 2, y: self.size.height * 2)
             }
         })
@@ -210,18 +221,30 @@ extension GameScene: FBNodeQueueDelegate {
     
     func createNode(_ nodeQueue: FBNodeQueue) -> SKNode {
         
-        return barrierFactory.barrier(ofType: .ring, toParentWithRect: self.frame)
+        if nodeQueue == self.ringQueue {
+            return barrierFactory.barrier(ofType: .ring, toParentWithRect: self.frame)
+        } else if nodeQueue == self.jumpSpikesQueue {
+            return barrierFactory.barrier(ofType: .vertical, toParentWithRect: self.frame)
+        } else {
+            return SKNode.init()
+        }
     }
     
     func setupNode(_ nodeQueue: FBNodeQueue, node: SKNode) {
-        
-        let rectCreator = FBRingBarrierCreator.init()
         
         node.removeFromParent()
         node.removeAllActions()
         node.position = CGPoint.zero
         
-        rectCreator.resetBehaviour(inBarrier: node, inParentWithFrame: self.frame)
+        if let nodeName = node.name {
+            if nodeName == "ring" {
+                barrierFactory.creator(ofType: .ring)
+                    .resetBehaviour(inBarrier: node, inParentWithFrame: self.frame)
+            } else {
+                barrierFactory.creator(ofType: .vertical)
+                    .resetBehaviour(inBarrier: node, inParentWithFrame: self.frame)
+            }
+        }
     }
     
     func resuseStrategy(_ nodeQueue: FBNodeQueue) -> FBNodeQueueReuseStrategy {

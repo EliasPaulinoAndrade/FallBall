@@ -24,6 +24,7 @@
 		E364371A220E5BBF004F46C0 /* CGPoint+add.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3643719220E5BBF004F46C0 /* CGPoint+add.swift */; };
 		E364371C220EED87004F46C0 /* FBRotateBehaviour.swift in Sources */ = {isa = PBXBuildFile; fileRef = E364371B220EED87004F46C0 /* FBRotateBehaviour.swift */; };
 		E364371F220EFA09004F46C0 /* FBCircularSpikedNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E364371E220EFA09004F46C0 /* FBCircularSpikedNode.swift */; };
+		E3643721220F0239004F46C0 /* FBVerticalSpikesWallBarrierCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3643720220F0239004F46C0 /* FBVerticalSpikesWallBarrierCreator.swift */; };
 		E36BEFE8220C8B44008C3B4C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36BEFE7220C8B44008C3B4C /* AppDelegate.swift */; };
 		E36BEFEA220C8B44008C3B4C /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = E36BEFE9220C8B44008C3B4C /* GameScene.sks */; };
 		E36BEFEC220C8B44008C3B4C /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = E36BEFEB220C8B44008C3B4C /* Actions.sks */; };
@@ -36,6 +37,7 @@
 		E36BF00E220C8B45008C3B4C /* FallBallUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36BF00D220C8B45008C3B4C /* FallBallUITests.swift */; };
 		E36BF02A220CEF1A008C3B4C /* FBGameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36BF029220CEF1A008C3B4C /* FBGameState.swift */; };
 		E36BF02E220CF028008C3B4C /* FBStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36BF02D220CF028008C3B4C /* FBStates.swift */; };
+		E3D3B739220F0A4C003A419D /* FBJumpHorizontallyBehaviour.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D3B738220F0A4C003A419D /* FBJumpHorizontallyBehaviour.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +75,7 @@
 		E3643719220E5BBF004F46C0 /* CGPoint+add.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+add.swift"; sourceTree = "<group>"; };
 		E364371B220EED87004F46C0 /* FBRotateBehaviour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBRotateBehaviour.swift; sourceTree = "<group>"; };
 		E364371E220EFA09004F46C0 /* FBCircularSpikedNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBCircularSpikedNode.swift; sourceTree = "<group>"; };
+		E3643720220F0239004F46C0 /* FBVerticalSpikesWallBarrierCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBVerticalSpikesWallBarrierCreator.swift; sourceTree = "<group>"; };
 		E36BEFE4220C8B44008C3B4C /* FallBall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FallBall.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E36BEFE7220C8B44008C3B4C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E36BEFE9220C8B44008C3B4C /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -91,6 +94,7 @@
 		E36BF00F220C8B45008C3B4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E36BF029220CEF1A008C3B4C /* FBGameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBGameState.swift; sourceTree = "<group>"; };
 		E36BF02D220CF028008C3B4C /* FBStates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBStates.swift; sourceTree = "<group>"; };
+		E3D3B738220F0A4C003A419D /* FBJumpHorizontallyBehaviour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBJumpHorizontallyBehaviour.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +150,7 @@
 				E36436FA220DF035004F46C0 /* FBFallBehaviour.swift */,
 				E36436FE220DF1D3004F46C0 /* FBBackAndForth.swift */,
 				E364371B220EED87004F46C0 /* FBRotateBehaviour.swift */,
+				E3D3B738220F0A4C003A419D /* FBJumpHorizontallyBehaviour.swift */,
 			);
 			path = Behaviour;
 			sourceTree = "<group>";
@@ -175,6 +180,7 @@
 			children = (
 				E36436F2220DE069004F46C0 /* FBRectBarrierCreator.swift */,
 				E3643717220E4C12004F46C0 /* FBRingBarrierCreator.swift */,
+				E3643720220F0239004F46C0 /* FBVerticalSpikesWallBarrierCreator.swift */,
 			);
 			path = Barriers;
 			sourceTree = "<group>";
@@ -392,11 +398,13 @@
 				E3643711220E4097004F46C0 /* FBNodeQueueOutOfSightStrategy.swift in Sources */,
 				E36BF02A220CEF1A008C3B4C /* FBGameState.swift in Sources */,
 				E36436F3220DE069004F46C0 /* FBRectBarrierCreator.swift in Sources */,
+				E3643721220F0239004F46C0 /* FBVerticalSpikesWallBarrierCreator.swift in Sources */,
 				E36436FD220DF12D004F46C0 /* SKNode+behaviour.swift in Sources */,
 				E3643718220E4C12004F46C0 /* FBRingBarrierCreator.swift in Sources */,
 				E364371C220EED87004F46C0 /* FBRotateBehaviour.swift in Sources */,
 				E36436FB220DF035004F46C0 /* FBFallBehaviour.swift in Sources */,
 				E36436F6220DEEB3004F46C0 /* SKScene+unit.swift in Sources */,
+				E3D3B739220F0A4C003A419D /* FBJumpHorizontallyBehaviour.swift in Sources */,
 				E3643705220DF6F1004F46C0 /* FBNodeQueue.swift in Sources */,
 				E36436F1220DDF7D004F46C0 /* FBBarrierCreatorProtocol.swift in Sources */,
 				E36BEFEE220C8B44008C3B4C /* GameScene.swift in Sources */,

@@ -15,6 +15,7 @@ struct FBBarrierFactory {
     
     var rectBarrierCreator = FBRectBarrierCreator.init()
     var ringBarrierCreator = FBRingBarrierCreator.init()
+    var verticalBarrierCreator = FBVerticalSpikesWallBarrierCreator.init()
     
     func barrier(ofType barrierType: FBBarrierType, toParentWithRect: CGRect) -> SKShapeNode {
         
@@ -23,6 +24,19 @@ struct FBBarrierFactory {
             return rectBarrierCreator.barrierNode(withParentRect: toParentWithRect)
         case .ring:
             return ringBarrierCreator.barrierNode(withParentRect: toParentWithRect)
+        case .vertical:
+            return verticalBarrierCreator.barrierNode(withParentRect: toParentWithRect)
+        }
+    }
+    
+    func creator(ofType barrierType: FBBarrierType) -> FBBarrierCreatorProtocol {
+        switch barrierType {
+        case .rect:
+            return self.rectBarrierCreator
+        case .ring:
+            return self.ringBarrierCreator
+        case .vertical:
+            return self.verticalBarrierCreator
         }
     }
 }

@@ -11,7 +11,7 @@ import SpriteKit
 
 
 /// Uma fila usada para reaproveitar nodes tendo em vista alguma estatégia de reuso(é usado economizar no processmento de usar varios nodes sem necessidades)
-class FBNodeQueue {
+class FBNodeQueue: NSObject {
     private var nodes: [SKNode] = []
     var delegate: FBNodeQueueDelegate?
     

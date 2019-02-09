@@ -63,7 +63,7 @@ class FBRingBarrierCreator: FBBarrierCreatorProtocol {
         let barrierBody = SKPhysicsBody.init(edgeLoopFrom: barrierNode.path ?? bezierSpikes.cgPath)
         
         barrierNode.fillColor = SKColor.white
-        barrierNode.name = "barrier"
+        barrierNode.name = "ring"
         barrierNode.physicsBody = barrierBody
         barrierNode.physicsBody?.categoryBitMask = 0010
         barrierNode.physicsBody?.collisionBitMask = 0000
@@ -136,7 +136,5 @@ class FBRingBarrierCreator: FBBarrierCreatorProtocol {
                 y: parentRect.height/2
             )
         }
-        
-        
     }
 }

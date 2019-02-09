@@ -14,5 +14,5 @@ import Foundation
 /// - rect: retangular
 /// - ring: cirular com spikes
 enum FBBarrierType {
-    case rect, ring
+    case rect, ring, vertical
 }
