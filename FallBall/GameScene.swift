@@ -16,7 +16,6 @@ class GameScene: SKScene {
     lazy var state: FBGameState = InitialState.init(scene: self)
     
     private var ringQueue = FBNodeQueue.init()
-    
     private var jumpSpikesQueue = FBNodeQueue.init()
     
     private var barrierFactory = FBBarrierFactory.init()
@@ -24,6 +23,8 @@ class GameScene: SKScene {
     var spwanTimer: Timer?
     var pointsTimer: Timer?
     
+    
+    /// o player
     lazy var ball: SKShapeNode = {
         let unit = SKScene.unit(forSceneFrame: self.frame)
         
@@ -41,6 +42,8 @@ class GameScene: SKScene {
         return ball
     }()
     
+    
+    /// o node do chão, que mata o player
     lazy var floorNode: SKShapeNode = {
         let unit = SKScene.unit(forSceneFrame: self.frame)
         
@@ -63,6 +66,8 @@ class GameScene: SKScene {
         return floor
     }()
     
+    
+    /// a label que mostra o tempo
     lazy var messageLabel: SKLabelNode = {
         
         let label = SKLabelNode.init(text: "Tap To Play")
@@ -74,6 +79,7 @@ class GameScene: SKScene {
         return label
     }()
     
+    
     override func didMove(to view: SKView) {
         
         ringQueue.delegate = self
@@ -81,13 +87,24 @@ class GameScene: SKScene {
 
         self.physicsWorld.contactDelegate = self
         
+        //adiciona filhos...
         self.addChild(ball)
         self.addChild(floorNode)
         self.addChild(messageLabel)
+        
+        //inicia pausado
         self.isPaused = true
+        
+        //cria spikes do teto
         self.createSpikes(numberOfSpikes: 9, spikeHeight: 30)
     }
     
+    
+    /// Percorre a largura da tela criando spikes que vao ser colocados no teto, para parar a passagem do player
+    ///
+    /// - Parameters:
+    ///   - numberOfSpikes: numero de spikes que devem estar no teto
+    ///   - spikeHeight: a altura dos spikes
     func createSpikes(numberOfSpikes: Int, spikeHeight: CGFloat) {
         let spikeWidth = self.size.width/CGFloat(numberOfSpikes)
         let bezier = UIBezierPath.init()
@@ -132,6 +149,8 @@ class GameScene: SKScene {
         self.addChild(spikeNode)
     }
     
+    
+    /// comeca um timer que vai contar os pontos
     func beginCountPoints() {
         var numberOfSeconds = 0
         self.pointsTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (timer) in
@@ -140,10 +159,14 @@ class GameScene: SKScene {
         })
     }
     
+    
+    /// invalida o timer de pontos
     func stopCountPoints() {
         self.pointsTimer?.invalidate()
     }
     
+    
+    /// inicia a criacao de barreiras pelo tempo usando uma fila de nodes.
     func beginSpawn() {
         self.spwanTimer = Timer.scheduledTimer(withTimeInterval: 5, repeats: true) { (timer) in
             
@@ -159,10 +182,14 @@ class GameScene: SKScene {
         }
     }
     
+    
+    /// invalida o timer de criacao de barreiras
     func stopSpawn() {
         self.spwanTimer?.invalidate()
     }
     
+    
+    /// joga as barreiras para fora da tela quando o player morre
     func resetBarries() {
 
         self.scene?.children.forEach({ (child) in
@@ -172,16 +199,21 @@ class GameScene: SKScene {
         })
     }
     
+    
+    /// reseta a mesagem para o tamanho inicial
     func resetMessageNode() {
         self.messageLabel.position = CGPoint.init(x: 0, y: -self.size.height/4)
         self.messageLabel.fontSize = 50
     }
     
+    
+    /// aumenta o tamanho da fonte da label para mostrar a pontuacao
     func centrilizeMessageNode() {
         self.messageLabel.position = CGPoint.zero
         self.messageLabel.fontSize = 100
     }
     
+    /// limita a velocidade na bola causada pelo impulso dado.
     override func didSimulatePhysics() {
         if let ballVelocityY = self.ball.physicsBody?.velocity.dy,
            ballVelocityY > GameScene.MAX_BALL_VELOCITY {
@@ -189,13 +221,15 @@ class GameScene: SKScene {
             self.ball.physicsBody?.velocity.dy = GameScene.MAX_BALL_VELOCITY
         }
     }
-    
+
     func touchDown(atPoint pos : CGPoint) {
         
+        // o estado do jogo muda nesse ponto, somente se o estado atual for initial ou dead.
         if state is InitialState || state is DeadState {
             state.ahead()
         }
         
+        // aplica um impulso a bola quando o usuario toca na tela
         self.ball.physicsBody?.applyImpulse(CGVector.init(dx: 0, dy: 500))
     }
     
@@ -203,14 +237,13 @@ class GameScene: SKScene {
     
         for t in touches { self.touchDown(atPoint: t.location(in: self)) }
     }
-    
-    override func update(_ currentTime: TimeInterval) {
-        
-    }
+
 }
 
 extension GameScene: SKPhysicsContactDelegate {
     func didBegin(_ contact: SKPhysicsContact) {
+        
+        //se um contato acontece entre o player e um obstaculo, vai ao proximo estado, de dead.
         if self.state is PlayingState {
             self.state.ahead()
         }
@@ -219,6 +252,11 @@ extension GameScene: SKPhysicsContactDelegate {
 
 extension GameScene: FBNodeQueueDelegate {
     
+    
+    /// Cria um node para a nodequeue dependendo da fila de nodes
+    ///
+    /// - Parameter nodeQueue: a fila de nodes
+    /// - Returns: o node criado
     func createNode(_ nodeQueue: FBNodeQueue) -> SKNode {
         
         if nodeQueue == self.ringQueue {
@@ -230,6 +268,12 @@ extension GameScene: FBNodeQueueDelegate {
         }
     }
     
+    
+    /// seta atributos de um node que devem ser setados sempre que ele for reusado
+    ///
+    /// - Parameters:
+    ///   - nodeQueue: a fila de nodes
+    ///   - node: o node sendo reutilizado
     func setupNode(_ nodeQueue: FBNodeQueue, node: SKNode) {
         
         node.removeFromParent()

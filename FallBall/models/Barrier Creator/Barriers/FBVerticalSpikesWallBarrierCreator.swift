@@ -9,6 +9,8 @@
 import Foundation
 import SpriteKit
 
+
+/// cria uma barreira vertical com spikes.
 class FBVerticalSpikesWallBarrierCreator: FBBarrierCreatorProtocol {
     
     func barrierNode(withParentRect parentRect: CGRect) -> SKShapeNode {
