@@ -8,6 +8,11 @@
 
 import Foundation
 
+
+/// tipos de barreira
+///
+/// - rect: retangular
+/// - ring: cirular com spikes
 enum FBBarrierType {
     case rect, ring
 }

@@ -10,6 +10,7 @@ import Foundation
 import SpriteKit
 
 
+/// cria um obstaculo retangular que cai em direcao ao chão e faz um movimento de "vai-e-vem"
 class FBRectBarrierCreator: FBBarrierCreatorProtocol {
     
     static private let DEFAULT_HORIZONTAL_DISTANCE: CGFloat = 10

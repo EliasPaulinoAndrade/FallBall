@@ -9,6 +9,8 @@
 import Foundation
 import SpriteKit
 
+
+/// Cria um obstaculo de vai-e-vem em forma ciruclar e arrodeado de "spikes"
 class FBRingBarrierCreator: FBBarrierCreatorProtocol {
     
     private enum PointType {
@@ -56,7 +58,7 @@ class FBRingBarrierCreator: FBBarrierCreatorProtocol {
                 lastPointType = .internal_
             }
         }
-    
+ 
         let barrierNode = FBCircularSpikedNode.init(path: bezierSpikes.cgPath, centered: true)
         let barrierBody = SKPhysicsBody.init(edgeLoopFrom: barrierNode.path ?? bezierSpikes.cgPath)
         
@@ -68,9 +70,7 @@ class FBRingBarrierCreator: FBBarrierCreatorProtocol {
         barrierNode.physicsBody?.contactTestBitMask = 0011
         barrierNode.internalRadius = internalBarrierRadius
         barrierNode.externalRadius = barrierRadius
-        
-        barrierNode.position = CGPoint.init(x: -parentRect.width/2 + barrierRadius, y: parentRect.height/2)
-        
+
         self.resetBehaviour(inBarrier: barrierNode, inParentWithFrame: parentRect)
         
         return barrierNode
@@ -102,8 +102,11 @@ class FBRingBarrierCreator: FBBarrierCreatorProtocol {
         
         guard let spikedNode = barrier as? FBCircularSpikedNode,
               let externalRadius = spikedNode.externalRadius else {
+                
             return
         }
+        
+        let beginsAtRight = Bool.random()
         
         let unit = SKScene.unit(forSceneFrame: parentRect)
         
@@ -114,7 +117,7 @@ class FBRingBarrierCreator: FBBarrierCreatorProtocol {
         
         barrier.applyBehaviour(FBBackAndForth.init(
             duration: 2,
-            distance: 5 * unit
+            distance: beginsAtRight ? (5 * unit) : (-5 * unit)
         ))
         
         barrier.applyBehaviour(FBRotateBehaviour.init(
@@ -122,6 +125,18 @@ class FBRingBarrierCreator: FBBarrierCreatorProtocol {
             angle: 0.2
         ))
         
-        barrier.position = CGPoint.init(x: -parentRect.width/2 + externalRadius, y: parentRect.height/2)
+        if beginsAtRight {
+            barrier.position = CGPoint.init(
+                x: -parentRect.width/2 + externalRadius,
+                y: parentRect.height/2
+            )
+        } else {
+            barrier.position = CGPoint.init(
+                x: parentRect.width/2 - externalRadius,
+                y: parentRect.height/2
+            )
+        }
+        
+        
     }
 }

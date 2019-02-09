@@ -9,6 +9,8 @@
 import Foundation
 import SpriteKit
 
+
+/// responsavel por criar barreiras
 struct FBBarrierFactory {
     
     var rectBarrierCreator = FBRectBarrierCreator.init()
