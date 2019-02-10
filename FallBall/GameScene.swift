@@ -168,7 +168,7 @@ class GameScene: SKScene {
     
     /// inicia a criacao de barreiras pelo tempo usando uma fila de nodes.
     func beginSpawn() {
-        self.spwanTimer = Timer.scheduledTimer(withTimeInterval: 5, repeats: true) { (timer) in
+        self.spwanTimer = Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { (timer) in
             
             if let barrierNode = self.ringQueue.dequeueNode() {
                 self.addChild(barrierNode)
