@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E3374C3222104D2E00D2C02C /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E3374C3122104D2E00D2C02C /* README.md */; };
 		E36436F1220DDF7D004F46C0 /* FBBarrierCreatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36436F0220DDF7D004F46C0 /* FBBarrierCreatorProtocol.swift */; };
 		E36436F3220DE069004F46C0 /* FBRectBarrierCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36436F2220DE069004F46C0 /* FBRectBarrierCreator.swift */; };
 		E36436F6220DEEB3004F46C0 /* SKScene+unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36436F5220DEEB3004F46C0 /* SKScene+unit.swift */; };
@@ -58,6 +59,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E3374C3122104D2E00D2C02C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		E36436F0220DDF7D004F46C0 /* FBBarrierCreatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBBarrierCreatorProtocol.swift; sourceTree = "<group>"; };
 		E36436F2220DE069004F46C0 /* FBRectBarrierCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBRectBarrierCreator.swift; sourceTree = "<group>"; };
 		E36436F5220DEEB3004F46C0 /* SKScene+unit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKScene+unit.swift"; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 				E3643708220E04C8004F46C0 /* FBNodeQueueDelegate.swift */,
 				E364370A220E065E004F46C0 /* FBNodeQueueReuseStrategy.swift */,
 				E3643710220E4097004F46C0 /* FBNodeQueueOutOfSightStrategy.swift */,
+				E3374C3122104D2E00D2C02C /* README.md */,
 			);
 			path = "Node Queue";
 			sourceTree = "<group>";
@@ -365,6 +368,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3374C3222104D2E00D2C02C /* README.md in Resources */,
 				E36BEFF3220C8B44008C3B4C /* Main.storyboard in Resources */,
 				E36BEFEA220C8B44008C3B4C /* GameScene.sks in Resources */,
 				E36BEFF5220C8B45008C3B4C /* Assets.xcassets in Resources */,
