@@ -14,30 +14,30 @@ Existem alguns behaviours já feitos. O exemplo a seguir mostra como criar um no
 
 struct FBBackAndForth: FBBehaviourProtocol {
 
-//os atributos de um behaviour dependem do tipo de behavior, no caso somente são necessários uma duração e distancia do movimento. Em outros tipos de behaviour, com animações mais complexas, pode ser necessário colocar mais atributos.
+    //os atributos de um behaviour dependem do tipo de behavior, no caso somente são necessários uma duração e distancia do movimento. Em outros tipos de behaviour, com animações mais complexas, pode ser necessário colocar mais atributos.
 
-var duration: TimeInterval
-var distance: CGFloat
+    var duration: TimeInterval
+    var distance: CGFloat
 
-func run(inNode node: SKNode) {
-//esse metodo basicamente coloca o conjunto de SKActions necessarias para fazer o movimento
-//nesse caso existe uma sequencia sendo repetida para sempre de mudanças de posição parametrizada pela distancia e duração dadas ao behaviour. O movimento ocorre somente no eixo X.
+    func run(inNode node: SKNode) {
+        //esse metodo basicamente coloca o conjunto de SKActions necessarias para fazer o movimento
+        //nesse caso existe uma sequencia sendo repetida para sempre de mudanças de posição parametrizada pela distancia e duração dadas ao behaviour. O movimento ocorre somente no eixo X.
 
-node.run(
-SKAction.repeatForever(
-SKAction.sequence([
-SKAction.moveBy(
-x: distance,
-y: 0, duration: duration
-),
-SKAction.moveBy(
-x: -distance,
-y: 0, duration: duration
-)
-])
-)
-)
-}
+        node.run(
+            SKAction.repeatForever(
+                SKAction.sequence([
+                    SKAction.moveBy(
+                        x: distance,
+                        y: 0, duration: duration
+                    ),
+                    SKAction.moveBy(
+                        x: -distance,
+                        y: 0, duration: duration
+                    )
+                ])
+            )
+        )
+    }
 }
 
 //agora, esse comportamento pode ser utilizado em vários nodes diferentes sem a necessidade de reescrever codigo
@@ -46,18 +46,18 @@ y: 0, duration: duration
 
 //instancia o behaviour, o movimento vai ocorrer na distancia de 50 a cada 2 segundos
 let behaviour = FBBackAndForth.init(
-duration: 2,
-distance: 50
+    duration: 2,
+    distance: 50
 )
 
 //o node que vai receber o comportamento, no caso um quadrado
 let node = SKShapeNode.init(rect:
-CGRect.init(
-x: 0,
-y: 0,
-width: 50,
-height: 50
-)
+    CGRect.init(
+        x: 0,
+        y: 0,
+        width: 50,
+        height: 50
+    )
 )
 
 //aplicacao do comportamento
