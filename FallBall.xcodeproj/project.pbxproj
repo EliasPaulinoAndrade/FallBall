@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		E3374C3222104D2E00D2C02C /* NodeQueue.md in Resources */ = {isa = PBXBuildFile; fileRef = E3374C3122104D2E00D2C02C /* NodeQueue.md */; };
 		E3374C342210531600D2C02C /* Behaviour.md in Resources */ = {isa = PBXBuildFile; fileRef = E3374C332210531600D2C02C /* Behaviour.md */; };
+		E3374C3622105DFE00D2C02C /* BarrierCreator.md in Resources */ = {isa = PBXBuildFile; fileRef = E3374C3522105DFE00D2C02C /* BarrierCreator.md */; };
 		E36436F1220DDF7D004F46C0 /* FBBarrierCreatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36436F0220DDF7D004F46C0 /* FBBarrierCreatorProtocol.swift */; };
 		E36436F3220DE069004F46C0 /* FBRectBarrierCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36436F2220DE069004F46C0 /* FBRectBarrierCreator.swift */; };
 		E36436F6220DEEB3004F46C0 /* SKScene+unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36436F5220DEEB3004F46C0 /* SKScene+unit.swift */; };
@@ -62,6 +63,7 @@
 /* Begin PBXFileReference section */
 		E3374C3122104D2E00D2C02C /* NodeQueue.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = NodeQueue.md; sourceTree = "<group>"; };
 		E3374C332210531600D2C02C /* Behaviour.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Behaviour.md; sourceTree = "<group>"; };
+		E3374C3522105DFE00D2C02C /* BarrierCreator.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = BarrierCreator.md; sourceTree = "<group>"; };
 		E36436F0220DDF7D004F46C0 /* FBBarrierCreatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBBarrierCreatorProtocol.swift; sourceTree = "<group>"; };
 		E36436F2220DE069004F46C0 /* FBRectBarrierCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBRectBarrierCreator.swift; sourceTree = "<group>"; };
 		E36436F5220DEEB3004F46C0 /* SKScene+unit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKScene+unit.swift"; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 				E36436F0220DDF7D004F46C0 /* FBBarrierCreatorProtocol.swift */,
 				E3643712220E464C004F46C0 /* FBBarrierFactory.swift */,
 				E3643714220E466D004F46C0 /* FBBarrierType.swift */,
+				E3374C3522105DFE00D2C02C /* BarrierCreator.md */,
 			);
 			path = "Barrier Creator";
 			sourceTree = "<group>";
@@ -378,6 +381,7 @@
 				E36BEFF5220C8B45008C3B4C /* Assets.xcassets in Resources */,
 				E36BEFF8220C8B45008C3B4C /* LaunchScreen.storyboard in Resources */,
 				E36BEFEC220C8B44008C3B4C /* Actions.sks in Resources */,
+				E3374C3622105DFE00D2C02C /* BarrierCreator.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

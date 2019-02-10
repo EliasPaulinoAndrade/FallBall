@@ -7,9 +7,8 @@ Criado com a intenção de organizar conjuntos de actions que são muito utiliza
 #### Forma de Uso
 Existem alguns behaviours já feitos. O exemplo a seguir mostra como criar um novo e usa-lo. O protocolo FBBehaviourProtocol é implementado por todos os behaviours.
 
+Implementando o protocolo behaviour:
 ```swift
-
-//implementa o protocolo behaviour.
 //esse behaviour vai fazer o movimento de vai-e-vem em um node: em que um node vai de uma parede a outra de um container e volta de forma continua.
 
 struct FBBackAndForth: FBBehaviourProtocol {
@@ -40,8 +39,10 @@ struct FBBackAndForth: FBBehaviourProtocol {
     }
 }
 
-//agora, esse comportamento pode ser utilizado em vários nodes diferentes sem a necessidade de reescrever codigo
+```
+Agora, esse comportamento pode ser utilizado em vários nodes diferentes sem a necessidade de reescrever codigo:
 
+```swift
 //exemplo de uso do behaviour
 
 //instancia o behaviour, o movimento vai ocorrer na distancia de 50 a cada 2 segundos

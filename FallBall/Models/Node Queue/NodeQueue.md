@@ -6,15 +6,16 @@ Contém uma fila de nodes criada com a intenção de reaproveitar nodes ao invé
 
 #### Forma de Uso
 
+Instanciando a fila:
 ```swift
-
-//cria a fila
 var queue = FBNodeQueue.init()
 
 //seta o delegate da fila
 queue.delegate = self
 
-//implementa o delegate da fila, no caso ele está sendo implementado na propria GameScene
+```
+Implementando o delegate da fila, no caso ele está sendo implementado na propria GameScene:
+```swift
 extension GameScene: FBNodeQueueDelegate {
 
     func createNode(_ nodeQueue: FBNodeQueue) -> SKNode {
@@ -44,9 +45,10 @@ extension GameScene: FBNodeQueueDelegate {
     }
 }
 
+```
+Agora, sempre que o metodo queue.dequeueNode() for chamado, a fila tentará reutilizar nodes, e se não houverem nodes para serem reutilizados, ela criará um novo:
 
-// agora, sempre que o metodo queue.dequeueNode() for chamado, a fila tentará reutilizar nodes, e se não houverem nodes para serem reutilizados, ela criará um novo.
-
+```swift
 // adiciona um novo node a cena
 if let newNode = queue.dequeueNode() {
     self.addChild(newNode)

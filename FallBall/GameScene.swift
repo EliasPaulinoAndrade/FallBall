@@ -277,8 +277,6 @@ extension GameScene: FBNodeQueueDelegate {
     func setupNode(_ nodeQueue: FBNodeQueue, node: SKNode) {
         
         node.removeFromParent()
-        node.removeAllActions()
-        node.position = CGPoint.zero
         
         if let nodeName = node.name {
             if nodeName == "ring" {

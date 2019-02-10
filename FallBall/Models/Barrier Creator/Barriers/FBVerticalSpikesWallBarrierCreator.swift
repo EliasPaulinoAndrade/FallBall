@@ -82,6 +82,9 @@ class FBVerticalSpikesWallBarrierCreator: FBBarrierCreatorProtocol {
             in: (-parentRect.height/2) ... (parentRect.height/2 - barrierHeight)
         )
         
+        barrier.removeAllActions()
+        barrier.position = CGPoint.zero
+        
         barrier.position.y = verticalOrigin
         
         barrier.applyBehaviour(FBJumpHorizontallyBehaviour.init(

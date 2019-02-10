@@ -110,6 +110,9 @@ class FBRingBarrierCreator: FBBarrierCreatorProtocol {
         
         let unit = SKScene.unit(forSceneFrame: parentRect)
         
+        barrier.removeAllActions()
+        barrier.position = CGPoint.zero
+        
         barrier.applyBehaviour(FBFallBehaviour.init(
             duration: 1,
             distance: -300
