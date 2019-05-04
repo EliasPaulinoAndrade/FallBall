@@ -41,6 +41,11 @@
 		E36BF02A220CEF1A008C3B4C /* FBGameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36BF029220CEF1A008C3B4C /* FBGameState.swift */; };
 		E36BF02E220CF028008C3B4C /* FBStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36BF02D220CF028008C3B4C /* FBStates.swift */; };
 		E3D3B739220F0A4C003A419D /* FBJumpHorizontallyBehaviour.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D3B738220F0A4C003A419D /* FBJumpHorizontallyBehaviour.swift */; };
+		E3D530B7227DC12200752726 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D530B6227DC12200752726 /* AppDelegate.swift */; };
+		E3D530B9227DC12200752726 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D530B8227DC12200752726 /* ViewController.swift */; };
+		E3D530BC227DC12200752726 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3D530BA227DC12200752726 /* Main.storyboard */; };
+		E3D530BE227DC12300752726 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3D530BD227DC12300752726 /* Assets.xcassets */; };
+		E3D530C1227DC12300752726 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3D530BF227DC12300752726 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +106,13 @@
 		E36BF029220CEF1A008C3B4C /* FBGameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBGameState.swift; sourceTree = "<group>"; };
 		E36BF02D220CF028008C3B4C /* FBStates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBStates.swift; sourceTree = "<group>"; };
 		E3D3B738220F0A4C003A419D /* FBJumpHorizontallyBehaviour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBJumpHorizontallyBehaviour.swift; sourceTree = "<group>"; };
+		E3D530B4227DC12200752726 /* FallBallRefactor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FallBallRefactor.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E3D530B6227DC12200752726 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E3D530B8227DC12200752726 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E3D530BB227DC12200752726 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E3D530BD227DC12300752726 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E3D530C0227DC12300752726 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E3D530C2227DC12300752726 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +131,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		E36BF006220C8B45008C3B4C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E3D530B1227DC12200752726 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -206,6 +225,7 @@
 			isa = PBXGroup;
 			children = (
 				E36BEFE6220C8B44008C3B4C /* FallBall */,
+				E3D530B5227DC12200752726 /* FallBallRefactor */,
 				E36BF001220C8B45008C3B4C /* FallBallTests */,
 				E36BF00C220C8B45008C3B4C /* FallBallUITests */,
 				E36BEFE5220C8B44008C3B4C /* Products */,
@@ -218,6 +238,7 @@
 				E36BEFE4220C8B44008C3B4C /* FallBall.app */,
 				E36BEFFE220C8B45008C3B4C /* FallBallTests.xctest */,
 				E36BF009220C8B45008C3B4C /* FallBallUITests.xctest */,
+				E3D530B4227DC12200752726 /* FallBallRefactor.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -268,6 +289,19 @@
 				E36436EF220DDEC4004F46C0 /* Barrier Creator */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		E3D530B5227DC12200752726 /* FallBallRefactor */ = {
+			isa = PBXGroup;
+			children = (
+				E3D530B6227DC12200752726 /* AppDelegate.swift */,
+				E3D530B8227DC12200752726 /* ViewController.swift */,
+				E3D530BA227DC12200752726 /* Main.storyboard */,
+				E3D530BD227DC12300752726 /* Assets.xcassets */,
+				E3D530BF227DC12300752726 /* LaunchScreen.storyboard */,
+				E3D530C2227DC12300752726 /* Info.plist */,
+			);
+			path = FallBallRefactor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -326,13 +360,30 @@
 			productReference = E36BF009220C8B45008C3B4C /* FallBallUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		E3D530B3227DC12200752726 /* FallBallRefactor */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E3D530C5227DC12300752726 /* Build configuration list for PBXNativeTarget "FallBallRefactor" */;
+			buildPhases = (
+				E3D530B0227DC12200752726 /* Sources */,
+				E3D530B1227DC12200752726 /* Frameworks */,
+				E3D530B2227DC12200752726 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FallBallRefactor;
+			productName = FallBallRefactor;
+			productReference = E3D530B4227DC12200752726 /* FallBallRefactor.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		E36BEFDC220C8B44008C3B4C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1010;
+				LastSwiftUpdateCheck = 1020;
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "Elias Paulino";
 				TargetAttributes = {
@@ -346,6 +397,9 @@
 					E36BF008220C8B45008C3B4C = {
 						CreatedOnToolsVersion = 10.1;
 						TestTargetID = E36BEFE3220C8B44008C3B4C;
+					};
+					E3D530B3227DC12200752726 = {
+						CreatedOnToolsVersion = 10.2.1;
 					};
 				};
 			};
@@ -365,6 +419,7 @@
 				E36BEFE3220C8B44008C3B4C /* FallBall */,
 				E36BEFFD220C8B45008C3B4C /* FallBallTests */,
 				E36BF008220C8B45008C3B4C /* FallBallUITests */,
+				E3D530B3227DC12200752726 /* FallBallRefactor */,
 			);
 		};
 /* End PBXProject section */
@@ -396,6 +451,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E3D530B2227DC12200752726 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E3D530C1227DC12300752726 /* LaunchScreen.storyboard in Resources */,
+				E3D530BE227DC12300752726 /* Assets.xcassets in Resources */,
+				E3D530BC227DC12200752726 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -449,6 +514,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E3D530B0227DC12200752726 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E3D530B9227DC12200752726 /* ViewController.swift in Sources */,
+				E3D530B7227DC12200752726 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -477,6 +551,22 @@
 			isa = PBXVariantGroup;
 			children = (
 				E36BEFF7220C8B45008C3B4C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		E3D530BA227DC12200752726 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E3D530BB227DC12200752726 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E3D530BF227DC12300752726 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E3D530C0227DC12300752726 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -718,6 +808,44 @@
 			};
 			name = Release;
 		};
+		E3D530C3227DC12300752726 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Z8P97P3QB4;
+				INFOPLIST_FILE = FallBallRefactor/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = paulino.elias.FallBallRefactor;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E3D530C4227DC12300752726 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Z8P97P3QB4;
+				INFOPLIST_FILE = FallBallRefactor/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = paulino.elias.FallBallRefactor;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -753,6 +881,15 @@
 			buildConfigurations = (
 				E36BF019220C8B45008C3B4C /* Debug */,
 				E36BF01A220C8B45008C3B4C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E3D530C5227DC12300752726 /* Build configuration list for PBXNativeTarget "FallBallRefactor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E3D530C3227DC12300752726 /* Debug */,
+				E3D530C4227DC12300752726 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
