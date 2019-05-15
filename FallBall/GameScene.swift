@@ -13,11 +13,8 @@ class GameScene: SKScene {
     
     static private let MAX_BALL_VELOCITY: CGFloat = 500
     
-    lazy var state: FBGameState = InitialState.init(scene: self)
-    
     private var ringQueue = FBNodeQueue.init()
     private var jumpSpikesQueue = FBNodeQueue.init()
-    
     private var barrierFactory = FBBarrierFactory.init()
     
     var spwanTimer: Timer?
@@ -26,6 +23,7 @@ class GameScene: SKScene {
     var floorNode: SKShapeNode!
     var roofNode: SKShapeNode!
     
+    lazy var state: FBGameState = InitialState.init(scene: self)
     /// a label que mostra o tempo
     lazy var messageLabel: SKLabelNode = {
         
@@ -44,17 +42,12 @@ class GameScene: SKScene {
         ringQueue.delegate = self
         jumpSpikesQueue.delegate = self
         
-        // cria o chão
         self.floorNode = FBFloorCreator().createFloor(frame: self.frame, size: self.size)
-        //cria spikes do teto
         self.roofNode = FBFRoofCreator().createRoofWithSpikes(numberOfSpikes: 9, spikeHeight: 30, size: self.size)
-        // cria player
         self.ball = FBPlayerCreator().createPlayer(frame: self.frame)
         
-        // delegates
         self.physicsWorld.contactDelegate = self
         
-        //adiciona filhos...
         self.addChild(ball)
         self.addChild(floorNode)
         self.addChild(self.roofNode)
