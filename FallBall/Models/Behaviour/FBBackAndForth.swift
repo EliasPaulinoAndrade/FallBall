@@ -17,6 +17,9 @@ struct FBBackAndForth: FBBehaviourProtocol {
     var distance: CGFloat
     
     func run(inNode node: SKNode) {
+        
+        
+        
         node.run(
             SKAction.repeatForever(
                 SKAction.sequence([
