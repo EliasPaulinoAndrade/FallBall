@@ -42,30 +42,7 @@ class GameScene: SKScene {
         return ball
     }()
     
-    
-    /// o node do chão, que mata o player
-    lazy var floorNode: SKShapeNode = {
-        let unit = SKScene.unit(forSceneFrame: self.frame)
-        
-        let floorFrame = CGRect.init(
-            x: -self.size.width/2,
-            y: -self.size.height/2 - unit,
-            width: self.size.width,
-            height: 10
-        )
-        
-        let floor = SKShapeNode.init(rect: floorFrame)
-        let floorBody = SKPhysicsBody.init(edgeLoopFrom: floorFrame)
-        
-        floor.physicsBody = floorBody
-        floor.physicsBody?.categoryBitMask = 0010
-        floor.physicsBody?.collisionBitMask = 0000
-        floor.physicsBody?.contactTestBitMask = 0011
-        floor.name = "floor"
-        
-        return floor
-    }()
-    
+    var floorNode: SKShapeNode!
     
     /// a label que mostra o tempo
     lazy var messageLabel: SKLabelNode = {
@@ -84,6 +61,8 @@ class GameScene: SKScene {
         
         ringQueue.delegate = self
         jumpSpikesQueue.delegate = self
+        
+        self.floorNode = FBFloorCreator().createFloor(frame: self.frame, size: self.size)
 
         self.physicsWorld.contactDelegate = self
         
@@ -94,6 +73,7 @@ class GameScene: SKScene {
         
         //inicia pausado
         self.isPaused = true
+        
         
         //cria spikes do teto
         self.createSpikes(numberOfSpikes: 9, spikeHeight: 30)
