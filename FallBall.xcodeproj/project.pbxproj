@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4D70E6FC228CB36500CE6C31 /* FBFloorCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D70E6FB228CB36500CE6C31 /* FBFloorCreator.swift */; };
 		4D70E6FE228CB8FD00CE6C31 /* FBRoofCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D70E6FD228CB8FD00CE6C31 /* FBRoofCreator.swift */; };
+		4D70E703228CBDA600CE6C31 /* FBPlayerCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D70E702228CBDA600CE6C31 /* FBPlayerCreator.swift */; };
 		E3374C3222104D2E00D2C02C /* NodeQueue.md in Resources */ = {isa = PBXBuildFile; fileRef = E3374C3122104D2E00D2C02C /* NodeQueue.md */; };
 		E3374C342210531600D2C02C /* Behaviour.md in Resources */ = {isa = PBXBuildFile; fileRef = E3374C332210531600D2C02C /* Behaviour.md */; };
 		E3374C3622105DFE00D2C02C /* BarrierCreator.md in Resources */ = {isa = PBXBuildFile; fileRef = E3374C3522105DFE00D2C02C /* BarrierCreator.md */; };
@@ -65,6 +66,7 @@
 /* Begin PBXFileReference section */
 		4D70E6FB228CB36500CE6C31 /* FBFloorCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBFloorCreator.swift; sourceTree = "<group>"; };
 		4D70E6FD228CB8FD00CE6C31 /* FBRoofCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBRoofCreator.swift; sourceTree = "<group>"; };
+		4D70E702228CBDA600CE6C31 /* FBPlayerCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBPlayerCreator.swift; sourceTree = "<group>"; };
 		E3374C3122104D2E00D2C02C /* NodeQueue.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = NodeQueue.md; sourceTree = "<group>"; };
 		E3374C332210531600D2C02C /* Behaviour.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Behaviour.md; sourceTree = "<group>"; };
 		E3374C3522105DFE00D2C02C /* BarrierCreator.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = BarrierCreator.md; sourceTree = "<group>"; };
@@ -132,13 +134,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4D70E6FA228CB31C00CE6C31 /* Scenario Creator */ = {
+		4D70E6FA228CB31C00CE6C31 /* scenario Creator */ = {
 			isa = PBXGroup;
 			children = (
 				4D70E6FB228CB36500CE6C31 /* FBFloorCreator.swift */,
 				4D70E6FD228CB8FD00CE6C31 /* FBRoofCreator.swift */,
 			);
-			path = "Scenario Creator";
+			path = "scenario Creator";
+			sourceTree = "<group>";
+		};
+		4D70E701228CBD8600CE6C31 /* playerCreator */ = {
+			isa = PBXGroup;
+			children = (
+				4D70E702228CBDA600CE6C31 /* FBPlayerCreator.swift */,
+			);
+			path = playerCreator;
 			sourceTree = "<group>";
 		};
 		E36436EF220DDEC4004F46C0 /* Barrier Creator */ = {
@@ -238,7 +248,8 @@
 		E36BEFE6220C8B44008C3B4C /* FallBall */ = {
 			isa = PBXGroup;
 			children = (
-				4D70E6FA228CB31C00CE6C31 /* Scenario Creator */,
+				4D70E701228CBD8600CE6C31 /* playerCreator */,
+				4D70E6FA228CB31C00CE6C31 /* scenario Creator */,
 				E36436F4220DEE97004F46C0 /* extensions */,
 				E36BF01B220C90BA008C3B4C /* Models */,
 				E36BEFE7220C8B44008C3B4C /* AppDelegate.swift */,
@@ -445,6 +456,7 @@
 				4D70E6FE228CB8FD00CE6C31 /* FBRoofCreator.swift in Sources */,
 				E36436FF220DF1D3004F46C0 /* FBBackAndForth.swift in Sources */,
 				E36BEFE8220C8B44008C3B4C /* AppDelegate.swift in Sources */,
+				4D70E703228CBDA600CE6C31 /* FBPlayerCreator.swift in Sources */,
 				E3643713220E464C004F46C0 /* FBBarrierFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

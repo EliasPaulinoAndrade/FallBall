@@ -22,26 +22,7 @@ class GameScene: SKScene {
     
     var spwanTimer: Timer?
     var pointsTimer: Timer?
-    
-    
-    /// o player
-    lazy var ball: SKShapeNode = {
-        let unit = SKScene.unit(forSceneFrame: self.frame)
-        
-        let ball = SKShapeNode.init(circleOfRadius: unit/2)
-        let ballBody = SKPhysicsBody.init(circleOfRadius: unit/2)
-        
-        ball.lineWidth = 2.5
-        ball.fillColor = SKColor.white
-        ball.physicsBody = ballBody
-        ball.physicsBody?.categoryBitMask = 0001
-        ball.physicsBody?.collisionBitMask = 0000
-        ball.physicsBody?.contactTestBitMask = 0010
-        ball.name = "ball"
-        
-        return ball
-    }()
-    
+    var ball: SKShapeNode!
     var floorNode: SKShapeNode!
     var roofNode: SKShapeNode!
     
@@ -63,22 +44,24 @@ class GameScene: SKScene {
         ringQueue.delegate = self
         jumpSpikesQueue.delegate = self
         
+        // cria o chão
         self.floorNode = FBFloorCreator().createFloor(frame: self.frame, size: self.size)
-
+        //cria spikes do teto
+        self.roofNode = FBFRoofCreator().createRoofWithSpikes(numberOfSpikes: 9, spikeHeight: 30, size: self.size)
+        // cria player
+        self.ball = FBPlayerCreator().createPlayer(frame: self.frame)
+        
+        // delegates
         self.physicsWorld.contactDelegate = self
         
         //adiciona filhos...
         self.addChild(ball)
         self.addChild(floorNode)
+        self.addChild(self.roofNode)
         self.addChild(messageLabel)
         
         //inicia pausado
         self.isPaused = true
-        
-        
-        //cria spikes do teto
-        self.roofNode = FBFRoofCreator().createRoofWithSpikes(numberOfSpikes: 9, spikeHeight: 30, size: self.size)
-        self.addChild(self.roofNode)
     }
     
     /// comeca um timer que vai contar os pontos
@@ -90,12 +73,10 @@ class GameScene: SKScene {
         })
     }
     
-    
     /// invalida o timer de pontos
     func stopCountPoints() {
         self.pointsTimer?.invalidate()
     }
-    
     
     /// inicia a criacao de barreiras pelo tempo usando uma fila de nodes.
     func beginSpawn() {
@@ -113,12 +94,10 @@ class GameScene: SKScene {
         }
     }
     
-    
     /// invalida o timer de criacao de barreiras
     func stopSpawn() {
         self.spwanTimer?.invalidate()
     }
-    
     
     /// joga as barreiras para fora da tela quando o player morre
     func resetBarries() {
@@ -130,13 +109,11 @@ class GameScene: SKScene {
         })
     }
     
-    
     /// reseta a mesagem para o tamanho inicial
     func resetMessageNode() {
         self.messageLabel.position = CGPoint.init(x: 0, y: -self.size.height/4)
         self.messageLabel.fontSize = 50
     }
-    
     
     /// aumenta o tamanho da fonte da label para mostrar a pontuacao
     func centrilizeMessageNode() {
@@ -168,7 +145,6 @@ class GameScene: SKScene {
     
         for t in touches { self.touchDown(atPoint: t.location(in: self)) }
     }
-
 }
 
 extension GameScene: SKPhysicsContactDelegate {
@@ -182,7 +158,6 @@ extension GameScene: SKPhysicsContactDelegate {
 }
 
 extension GameScene: FBNodeQueueDelegate {
-    
     
     /// Cria um node para a nodequeue dependendo da fila de nodes
     ///
@@ -198,7 +173,6 @@ extension GameScene: FBNodeQueueDelegate {
             return SKNode.init()
         }
     }
-    
     
     /// seta atributos de um node que devem ser setados sempre que ele for reusado
     ///
